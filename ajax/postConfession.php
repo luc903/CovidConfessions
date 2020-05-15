@@ -21,27 +21,33 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 $sql = "INSERT INTO confessions (text)
 VALUES ('$c')";
 
-if (mysqli_query($conn, $sql)) {
-    if(0 < count(array_intersect(array_map('strtolower', explode(' ', $c)), $badWords)))
-    {
-        $isSafe = false;
-    }
 
-    if($isSafe) {
+if(0 < count(array_intersect(array_map('strtolower', explode(' ', $c)), $badWords)))
+{
+    $isSafe = false;
+}
 
-        $conn->close();
+if($isSafe) {
+    if (mysqli_query($conn, $sql)) {
 
-        $response->success = true;
-        $response->message = "Your confession has been added";
-        echo json_encode($response);
+        if($isSafe) {
+
+            $conn->close();
+
+            $response->success = true;
+            $response->message = "Your confession has been added";
+            echo json_encode($response);
+        }
     }
     else {
-        $response->success = false;
-        $response->message = "Please do inappropriate words";
-        echo json_encode($response);
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+
+}
+else {
+    $response->success = false;
+    $response->message = "Please do inappropriate words";
+    echo json_encode($response);
 }
 
 mysqli_close($conn);
