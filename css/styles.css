@@ -1,0 +1,30 @@
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.home-page__wrapper {
+  max-width: 50vw;
+}
+.home-page__wrapper button {
+  width: 100%;
+}
+
+.confession__input {
+  resize: none;
+  margin-bottom: 0.3rem;
+}
+
+#confessionsPage {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.confessionsPage__column {
+  flex: 0 0 25%;
+}
+
+/*# sourceMappingURL=styles.css.map */
