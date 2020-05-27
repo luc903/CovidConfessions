@@ -1,3 +1,11 @@
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
 .home-page {
   display: flex;
   align-items: center;
@@ -5,15 +13,83 @@
   height: 100vh;
 }
 .home-page__wrapper {
-  max-width: 50vw;
+  max-width: 80vw;
 }
 .home-page__wrapper button {
   width: 100%;
 }
+.home-page__confession-wrapper {
+  display: flex;
+  justify-content: space-between;
+  transition: opacity 500ms;
+}
+.home-page.focus .home-page__confession-wrapper {
+  opacity: 0.5;
+}
+.home-page.focus #confession-form {
+  opacity: 1;
+}
 
-.confession__input {
+.confession {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 28%;
+  border: 1px solid #ccc;
+  padding: 2em;
+}
+.confession:first-of-type {
+  margin-left: 0;
+}
+.confession:last-of-type {
+  margin-right: 0;
+}
+.confession__body {
+  padding: 1em 1.5em;
+  position: relative;
+}
+.confession__body .uk-icon {
+  position: absolute;
+  top: 0;
+}
+.confession__body .uk-icon:first-child {
+  left: 0;
+  transform: RotateY(180deg);
+}
+.confession__body .uk-icon:last-child {
+  right: 0;
+}
+.confession__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#confession-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 60%;
+  margin: 5em auto;
+  transition: opacity 500ms;
+  opacity: 0.5;
+}
+#confession-form textarea {
+  display: block;
+  margin: 0;
+  line-height: calc(2.4rem / 1.5);
+  font-size: 1.5rem;
+  height: 2.4rem;
   resize: none;
   margin-bottom: 0.3rem;
+}
+#confession-form button {
+  height: 2.4rem;
+  width: 33.33%;
+  margin-top: 1em;
+}
+#confession-form #response {
+  flex: 0 0 100%;
 }
 
 #confessionsPage {
@@ -25,6 +101,12 @@
 
 .confessionsPage__column {
   flex: 0 0 25%;
+}
+
+/* To add this to separate SCSS file  */
+textarea:focus {
+  outline: none !important;
+  border-color: inherit !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

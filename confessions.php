@@ -8,20 +8,20 @@
 
 include("includes/header.php");
 ?>
-<div id="confessionsPage">
-    <div class="confessionsPage__column">
+    <div id="confessionsPage" style="display: none">
+        <div class="confessionsPage__column">
 
-    </div>
-    <div class="confessionsPage__column">
+        </div>
+        <div class="confessionsPage__column">
 
-    </div>
-    <div class="confessionsPage__column">
+        </div>
+        <div class="confessionsPage__column">
 
-    </div>
-    <div class="confessionsPage__column">
+        </div>
+        <div class="confessionsPage__column">
 
+        </div>
     </div>
-</div>
 <?php
 
 include("includes/footer.php");

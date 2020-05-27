@@ -8,7 +8,7 @@
 
 require_once ("../config.php");
 
-$result = mysqli_query($conn, "SELECT * FROM confessions ORDER BY RAND() LIMIT 12");
+$result = mysqli_query($conn, "SELECT * FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 12");
 
 $count = 0;
 while($row = mysqli_fetch_row($result)){
