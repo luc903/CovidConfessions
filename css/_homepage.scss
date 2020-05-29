@@ -1,0 +1,107 @@
+#home-page {
+
+}
+
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__wrapper {
+    max-width: 80vw;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  &__confession-wrapper {
+    display: flex;
+    justify-content: space-between;
+    transition: opacity 500ms;
+  }
+
+  &.focus {
+    .home-page__confession-wrapper {
+      opacity: .5;
+    }
+
+    #confession-form {
+      opacity: 1;
+    }
+  }
+}
+
+.confession {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 28%;
+  border: 1px solid #ccc;
+  padding: 2em;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &__body {
+    padding: 1em 1.5em;
+    position: relative;
+
+    .uk-icon {
+      position: absolute;
+      top: 0;
+
+      &:first-child {
+        left: 0;
+        transform: RotateY(180deg);
+      }
+
+      &:last-child {
+        right: 0;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+#confession-form {
+  $inputHeight: 2.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 60%;
+  margin: 5em auto;
+  transition: opacity 500ms;
+  opacity: .5;
+
+
+  textarea {
+    display: block;
+    margin: 0;
+    line-height: calc(#{$inputHeight} / 1.5);
+    font-size: 1.5rem;
+    height: $inputHeight;
+    resize: none;
+    margin-bottom: .3rem;
+  }
+  button {
+    height: $inputHeight;
+    width: 33.33%;
+    margin-top: 1em;
+  }
+
+  #response {
+    flex: 0 0 100%;
+  }
+}

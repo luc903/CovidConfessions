@@ -1,0 +1,9 @@
+@import "util";
+@import "homepage";
+@import "confessions";
+
+/* To add this to separate SCSS file  */
+textarea:focus {
+  outline: none !important;
+  border-color: inherit !important;
+}
