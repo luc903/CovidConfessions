@@ -51,9 +51,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 28%;
+  flex: 0 0 27%;
   padding: 2em;
+  margin: -1em;
   background: #F9F2EC;
+    
   font-weight: 600;
   -webkit-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
   -moz-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
@@ -130,16 +132,37 @@
   flex: 0 0 100%;
 }
 
-#confessionsPage {
+/*#confessionsPage {
   display: flex;
   justify-content: space-between;
   width: 90vw;
   margin: 0 auto;
+}*/
+
+#confessionsPage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #F1F1F1;
+  color: #4395D1;
+  font-family: 'Poppins', sans-serif;
+    
+}
+.confessions-page__wrapper {
+  max-width: 80vw;
+}
+.confessions-page__confession-wrapper {
+  display: flex;
+  justify-content: space-between;
+  transition: opacity 500ms;
 }
 
+/*
 .confessionsPage__column {
   flex: 0 0 25%;
 }
+*/
 
 /* To add this to separate SCSS file  */
 textarea:focus {

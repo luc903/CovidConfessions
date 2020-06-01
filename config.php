@@ -8,7 +8,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "bAbyInACorner";
+$password = "root";
 $dbname = "covidconfessions";
 
 // Create connection

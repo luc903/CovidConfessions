@@ -8,6 +8,13 @@
 include("includes/header.php");
 ?>
 
+    <audio id="audio_1" src="../audio/confession_1.mp3"></audio>
+    <audio id="audio_2" src="../audio/confession_2.mp3"></audio>
+    <audio id="audio_3" src="../audio/confession_3.mp3"></audio>
+    <audio id="audio_4" src="../audio/confession_4.mp3"></audio>
+    <audio id="audio_5" src="../audio/confession_5.mp3"></audio>
+    <audio id="audio_6" src="../audio/confession_6.mp3"></audio>
+
     <div class="home-page">
         
         <div class="home-page__wrapper">
@@ -27,7 +34,12 @@ include("includes/header.php");
                     <div class="confession__footer">
                         <button class="uk-button uk-button-default" uk-icon="icon: play; ratio: 1.2"  value="play_1" onclick="play_1()"></button>
                         <small>May 2020</small>
+                        
                     </div>
+                    <!--<div>
+                        <img data-src="images/person_1.png" width="100em" height="100 em" alt="" uk-img>
+                    </div>-->
+                    
                 </div>
                 <div class="confession" style="display: none" uk-scrollspy="cls:uk-animation-fade; delay: 1000">
                     <p>I confess that...</p>
