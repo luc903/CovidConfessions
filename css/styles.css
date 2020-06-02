@@ -24,8 +24,6 @@
   background: #F1F1F1;
   color: #4395D1;
   font-family: 'Poppins', sans-serif;
-  
-    
 }
 .home-page__wrapper {
   max-width: 80vw;
@@ -53,7 +51,8 @@
   justify-content: space-between;
   flex: 0 0 27%;
   padding: 2em;
-  margin: -1em;
+/*  margin: -1em;*/
+    
   background: #F9F2EC;
     
   font-weight: 600;
@@ -139,7 +138,7 @@
   margin: 0 auto;
 }*/
 
-#confessionsPage{
+.confessionsPage{
   display: flex;
   align-items: center;
   justify-content: center;
