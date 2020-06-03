@@ -36,6 +36,11 @@
   justify-content: space-between;
   transition: opacity 500ms;
 }
+.ALT_home-page__confession-wrapper {
+  display: flex;
+  justify-content: center;
+  transition: opacity 500ms;
+}
 .home-page.focus .home-page__confession-wrapper {
   opacity: 0.5;
   filter: blur(0.2rem);
@@ -52,9 +57,7 @@
   flex: 0 0 27%;
   padding: 2em;
 /*  margin: -1em;*/
-    
   background: #F9F2EC;
-    
   font-weight: 600;
   -webkit-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
   -moz-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
