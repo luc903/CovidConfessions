@@ -28,21 +28,21 @@
 .home-page__wrapper {
   max-width: 80vw;
 }
-.home-page__wrapper button {
+.home-page__wrapper .confession__button {
   width: 100%;
 }
-.home-page__confession-wrapper {
+.ALT_home-page__confession-wrapper {
   display: flex;
   justify-content: space-between;
   transition: opacity 500ms;
 }
-.ALT_home-page__confession-wrapper {
+.home-page__confession-wrapper {
   display: flex;
   justify-content: center;
   transition: opacity 500ms;
 }
 .home-page.focus .home-page__confession-wrapper {
-  opacity: 0.5;
+  opacity: 0.2;
   filter: blur(0.2rem);
 }
 .home-page.focus #confession-form {
@@ -59,6 +59,7 @@
 /*  margin: -1em;*/
   background: #F9F2EC;
   font-weight: 600;
+ position: relative;
   -webkit-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
   -moz-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
    box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
@@ -70,6 +71,13 @@
   margin-right: 0;
 }
 .confession__body {
+  padding: 1em 1.5em;
+  position: relative;
+  font-family: 'Work Sans', sans-serif;
+  font-style: italic;
+  font-weight: 200;
+}
+.confession__body p {
   padding: 1em 1.5em;
   position: relative;
   font-family: 'Work Sans', sans-serif;
