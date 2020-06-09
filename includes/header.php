@@ -10,7 +10,9 @@
 <html lang="en">
 <head>
     <title>Covid Confessions</title>
-    <link href="/css/uikit.min.css" rel="stylesheet"/>
-    <link href="/css/styles.css" rel="stylesheet"/>
+    <link href="css/uikit.min.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    
 </head>
 <body>

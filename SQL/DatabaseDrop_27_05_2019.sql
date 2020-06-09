@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `confessions` (
   `text` varchar(1000) DEFAULT NULL,
   `isSafe` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table covidconfessions.confessions: ~10 rows (approximately)
 /*!40000 ALTER TABLE `confessions` DISABLE KEYS */;
