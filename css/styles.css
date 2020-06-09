@@ -186,6 +186,13 @@ textarea:focus {
 textarea:focus .confession-wrapper{
     
 }
+video {
+  object-fit: cover;
+}
+
+
+
+
 
 
 /*# sourceMappingURL=styles.css.map */

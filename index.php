@@ -14,7 +14,6 @@ include("includes/header.php");
     <audio id="audio_4" src="../audio/confession_4.mp3"></audio>
     <audio id="audio_5" src="../audio/confession_5.mp3"></audio>
     <audio id="audio_6" src="../audio/confession_6.mp3"></audio>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
 <script>
 
@@ -73,17 +72,24 @@ include("includes/header.php");
             el1.setAttribute('visible', 'false');
             
         }
-      
+        
+        
+        if (cnt >= 2){
+            var videoEl = document.querySelector('#video');
+            if (videoEl.paused){
+                videoEl.play();
+            } else {
+                videoEl.pause();
+            }
+            //console.log(videoEl.currentTime);
+        }
 
     };
+    
     var cnt=0;
     document.addEventListener('click', function() {   
-          
-          window.start();
-        cnt++;
-        
-        
-          
+        window.start();
+        cnt++;      
     });
     
     
@@ -98,11 +104,11 @@ include("includes/header.php");
             
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black" background="color: #FAFAFA">
                       <a-assets>
-                        <video id="video" autoplay="" loop="true" crossorigin="anonymous" playsinline="" webkit-playsinline="">
-                          <source src="video/anima_vr.mp4">
+                        <video id="video" autoplay="false" loop="true" crossorigin="anonymous" playsinline="" webkit-playsinline="" poster="images/vr_poster.png">
+                          <source src="video/room.mp4" poster="images/vr_poster.png" type="video/mp4" >
                         </video>
                       </a-assets>
-                      <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
+                      <a-videosphere src="#video" rotation="0 270 0" poster="images/vr_poster.png"></a-videosphere>
 
 
                       <a-entity id="textt" cursor-listener>
@@ -143,9 +149,7 @@ include("includes/header.php");
         
         
         </div>
-        
-           
-             
+            
         </div>
 
     </div>
