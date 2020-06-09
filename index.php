@@ -142,7 +142,7 @@ include("includes/header.php");
                 </div>
             </div>
             <form id="confession-form" uk-scrollspy="cls:uk-animation-fade;">
-                <textarea type="text" class="confession__input uk-textarea"></textarea>
+                <textarea type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
                 <button class="uk-button uk-button-default">Confess</button>
             </form>
         

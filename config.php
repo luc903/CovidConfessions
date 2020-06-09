@@ -8,7 +8,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "bAbyInACorner";
 $dbname = "covidconfessions";
 
 // Create connection
@@ -18,3 +18,5 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+error_reporting(0);
