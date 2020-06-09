@@ -5,38 +5,64 @@
 .pull-right {
   float: right;
 }
-
+/*
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  opacity: 0.1;
+  filter: blur(0.5rem);
+}
+*/
 .home-page {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: #F1F1F1;
+  color: #4395D1;
+  font-family: 'Poppins', sans-serif;
 }
 .home-page__wrapper {
   max-width: 80vw;
 }
-.home-page__wrapper button {
+.home-page__wrapper .confession__button {
   width: 100%;
 }
-.home-page__confession-wrapper {
+.ALT_home-page__confession-wrapper {
   display: flex;
   justify-content: space-between;
   transition: opacity 500ms;
 }
+.home-page__confession-wrapper {
+  display: flex;
+  justify-content: center;
+  transition: opacity 500ms;
+}
 .home-page.focus .home-page__confession-wrapper {
-  opacity: 0.5;
+  opacity: 0.2;
+  filter: blur(0.2rem);
 }
 .home-page.focus #confession-form {
   opacity: 1;
+
 }
 
 .confession {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 28%;
-  border: 1px solid #ccc;
+  flex: 0 0 27%;
   padding: 2em;
+/*  margin: -1em;*/
+  background: #F9F2EC;
+  font-weight: 600;
+ position: relative;
+  -webkit-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
+  -moz-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
+   box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
 }
 .confession:first-of-type {
   margin-left: 0;
@@ -47,6 +73,16 @@
 .confession__body {
   padding: 1em 1.5em;
   position: relative;
+  font-family: 'Work Sans', sans-serif;
+  font-style: italic;
+  font-weight: 200;
+}
+.confession__body p {
+  padding: 1em 1.5em;
+  position: relative;
+  font-family: 'Work Sans', sans-serif;
+  font-style: italic;
+  font-weight: 200;
 }
 .confession__body .uk-icon {
   position: absolute;
@@ -64,7 +100,12 @@
   justify-content: space-between;
   align-items: center;
 }
+.confession__footer .uk-button-default{
+    border: 0px solid #e5e5e5;
+    width: 8vw;
 
+    color: #4395D1;
+}
 #confession-form {
   display: flex;
   flex-wrap: wrap;
@@ -82,31 +123,76 @@
   height: 2.4rem;
   resize: none;
   margin-bottom: 0.3rem;
+    
+  background: #F9F2EC;
+  color: #4395D1;
+
 }
 #confession-form button {
   height: 2.4rem;
   width: 33.33%;
   margin-top: 1em;
+  background-color: #233253;
+  color:#F19ECA;
+  font-weight: 600;
+  letter-spacing: .2em;
+    
 }
 #confession-form #response {
   flex: 0 0 100%;
 }
 
-#confessionsPage {
+/*#confessionsPage {
   display: flex;
   justify-content: space-between;
   width: 90vw;
   margin: 0 auto;
+}*/
+
+.confessionsPage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #F1F1F1;
+  color: #4395D1;
+  font-family: 'Poppins', sans-serif;
+    
+}
+.confessions-page__wrapper {
+  max-width: 80vw;
+}
+.confessions-page__confession-wrapper {
+  display: flex;
+  justify-content: space-between;
+  transition: opacity 500ms;
 }
 
+/*
 .confessionsPage__column {
   flex: 0 0 25%;
 }
+*/
 
 /* To add this to separate SCSS file  */
 textarea:focus {
   outline: none !important;
   border-color: inherit !important;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(35,50,83,0.4)!important;
+  -moz-box-shadow: 2px 2px 2px 1px rgba(35,50,83,0.4)!important;
+  box-shadow: 2px 2px 2px 1px rgba(35,50,83,0.4)!important;
 }
+
+textarea:focus .confession-wrapper{
+    
+}
+video {
+  object-fit: cover;
+}
+
+
+
+
+
 
 /*# sourceMappingURL=styles.css.map */

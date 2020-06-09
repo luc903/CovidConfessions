@@ -87,15 +87,17 @@ $(function () {
             url: "/ajax/getConfessions.php",
             success: function (response) {
                 var JSONresponse = JSON.parse(response);
-                var returnArray = splitArray(JSONresponse, 3);
+                var returnArray = splitArray(JSONresponse, 1);
 
                 for (var i = 0; i < returnArray.length; i++) {
                     for (j = 0; j < returnArray[i].length; j++) {
-                        $($(".confessionsPage__column")[i]).append("<h2>" + returnArray[i][j]) + "</h2>";
+                        $($(".confessionsPage__column")[i]).append("<p>" + returnArray[i][j]) + "</p>";
+                    
+                        
                     }
                 }
 
-                $("#confessionsPage").fadeIn("slow");
+                //$("#confessionsPage").fadeIn("slow");
 
             },
             error: function (error) {
@@ -124,3 +126,29 @@ function printResponse(success, message) {
         $("#response").html(message);
     }
 }
+  function play_1() {
+        var audio = document.getElementById("audio_1");
+        audio.play();
+      }
+     function play_2() {
+        var audio = document.getElementById("audio_2");
+        audio.play();
+      }
+     function play_3() {
+        var audio = document.getElementById("audio_3");
+        audio.play();
+      }
+     function play_4() {
+        var audio = document.getElementById("audio_4");
+        audio.play();
+      }
+     function play_5() {
+        var audio = document.getElementById("audio_5");
+        audio.play();
+      }
+     function play_6() {
+        var audio = document.getElementById("audio_6");
+        audio.play();
+      }
+
+
