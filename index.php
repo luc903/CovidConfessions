@@ -83,11 +83,12 @@ mysqli_close($conn);
 
 
             if (cnt >= 2) {
-                var videoEl = document.querySelector('#video');
-                if (videoEl.paused) {
-                    videoEl.play();
+                //var videoEl = document.querySelector('#video');
+                var video = document.getElementById("video");
+                if (video.paused) {
+                    video.play();
                 } else {
-                    videoEl.pause();
+                    video.pause();
                 }
                 //console.log(videoEl.currentTime);
             }
