@@ -35,6 +35,18 @@ $(function () {
         };
         video.addEventListener("timeupdate", pausing_function);
         
+        //
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var scene = document.querySelector('a-scene');
+            var splash = document.querySelector('#splash');
+            var video = document.getElementById("video");
+            scene.addEventListener('loaded', function (e) {
+                document.getElementById('splash').fadeOut(1500);
+                video.play();
+            });
+        });
+        
         //Focusing on text box
         $(".confession__input").on("focus", function () {
             $(".home-page").addClass("focus");
@@ -170,5 +182,7 @@ function play_6() {
     var audio = document.getElementById("audio_6");
     audio.play();
 }
+
+
 
 

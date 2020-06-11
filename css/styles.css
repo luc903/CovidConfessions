@@ -32,11 +32,6 @@
 .home-page__wrapper .confession__button {
   width: 100%;
 }
-.ALT_home-page__confession-wrapper {
-  display: flex;
-  justify-content: space-between;
-  transition: opacity 500ms;
-}
 .home-page__confession-wrapper {
   display: flex;
   justify-content: center;
@@ -192,8 +187,83 @@ video {
 }
 
 
+/*  splash screen*/
+#splash {
+  position: absolute;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+flex-direction: column;
 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
 
+  margin: auto;
+}
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 0.25rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: black;
+  animation: spin 1s infinite linear;
+}
+#splash h2{
+  width: 100%;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  left: 0;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 100;
+  animation: in 3s ease-out forwards infinite;
+  animation-delay: 2s;
+}
+
+@keyframes in{
+  0%{
+    letter-spacing: 0px;
+    opacity: 1;
+  }
+  30%{
+    letter-spacing: 10px;
+    opacity: 0;
+  }
+  100%{
+    letter-spacing: 20px;
+    opacity: 0;
+  }
+}
+#splash img {
+    width: 30vh;
+    height: auto;
+    padding: 1em;
+    
+}
+
+.a-enter-ar, .a-enter-vr {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    font-weight: 200;
+    line-height: 16px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
 
 /*# sourceMappingURL=styles.css.map */

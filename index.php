@@ -131,14 +131,26 @@ mysqli_close($conn);
 
     </script>
 
-    <div class="home-page">
+    
+    
 
+
+    <div class="home-page">
+        
+        
+       
         <div class="home-page__wrapper">
+            <div id="splash">
+                <h2>Covid Confessions</h2>
+                <div class="loading"></div>
+                <img src="images/ACE.jpg">
+            </div>
+        
             <!--<video autoplay muted loop id="myVideo">
                 <source src="video/background_animation_sm.mp4" type="video/mp4">
             </video>-->-
 
-            <a-scene loading-screen="dotsColor: blue ; backgroundColor: black;" background="color: #FAFAFA" >
+            <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;" background="color: #FAFAFA" >
                 <a-assets>
                     <video id="video" autoplay="false" loop="false" crossorigin="anonymous" playsinline=""
                            webkit-playsinline="" poster="images/vr_poster.png">
