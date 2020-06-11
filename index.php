@@ -8,7 +8,15 @@
 include("includes/header.php");
 require_once("config.php");
 
-$randomConfession = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 1")->fetch_object()->text;
+$randomConfession_1 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 1")->fetch_object()->text;
+$randomConfession_2 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 1")->fetch_object()->text;
+$randomConfession_3 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 1")->fetch_object()->text;
+$randomConfession_4 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 1")->fetch_object()->text;
+$randomConfession_5 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 1")->fetch_object()->text;
+$randomConfession_6 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 1")->fetch_object()->text;
+$randomConfession_7 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 1")->fetch_object()->text;
+
+
 echo $randomConfession;
 
 mysqli_close($conn);
@@ -69,7 +77,7 @@ mysqli_close($conn);
 
             }
             if (cnt == 1) {
-                document.querySelector("#test").setAttribute('visible', 'true');
+                document.querySelector("#confession_1").setAttribute('visible', 'true');
                 var x = document.getElementById('vis');
                 if (x.style.visibility === 'hidden') {
                     x.style.visibility = 'visible';
@@ -92,6 +100,24 @@ mysqli_close($conn);
                 }
                 //console.log(videoEl.currentTime);
             }
+            
+            if (cnt >3){
+                var el1 = document.querySelector('#confession_1');
+                el1.setAttribute('visible', 'true');
+                var el2 = document.querySelector('#confession_2');
+                el2.setAttribute('visible', 'true');
+                var el3 = document.querySelector('#confession_3');
+                el3.setAttribute('visible', 'true');
+                var el4 = document.querySelector('#confession_4');
+                el4.setAttribute('visible', 'true');
+                var el5 = document.querySelector('#confession_5');
+                el5.setAttribute('visible', 'true');
+                var el6 = document.querySelector('#confession_6');
+                el6.setAttribute('visible', 'true');
+                var el7 = document.querySelector('#confession_7');
+                el7.setAttribute('visible', 'true');
+                
+            }
 
         };
        
@@ -100,6 +126,8 @@ mysqli_close($conn);
             window.start();
             cnt++;
         });
+        
+        
 
     </script>
 
@@ -118,10 +146,7 @@ mysqli_close($conn);
                     </video>
                 </a-assets>
                 <a-videosphere src="#video" rotation="0 270 0" poster="images/vr_poster.png"></a-videosphere>
-                <a-entity id="test" cursor-listener visible="false">
-                    <a-text align="center" value="<?php echo $randomConfession; ?>" material="color:#fff" baseline="center" position="0 1 -5"
-                            event-set__enter="_event: mouseenter; color: #8FF7FF"></a-text>
-                </a-entity>
+                
                 <a-entity id="textt" cursor-listener>
                     <a-text align="center" value="Tap To Start" material="color:#fff" position="0 1 -5"></a-text>
                 </a-entity>
@@ -130,14 +155,46 @@ mysqli_close($conn);
                     <a-text align="center" value="Tap To Confess" material="color:#fff" position="0 1 -5"
                             event-set__enter="_event: mouseenter; color: #8FF7FF"></a-text>
                 </a-entity>
-
-
-
+                
+                
+            
+                
+                <a-entity id="confession_1" cursor-listener visible="false">
+                    <a-text align="center" value="<?php echo $randomConfession_1; ?>" material="color:#fff" baseline="center" position="0 1 -7"
+                            event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                </a-entity>
+                                
+                <a-entity id="confession_2" cursor-listener visible="false" rotation="0 51 0">
+                    <a-text align="center" value="<?php echo $randomConfession_2; ?>" material="color:#fff" baseline="center" position="0 1 -7" 
+                            event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                </a-entity>
+                <a-entity id="confession_3" cursor-listener visible="false" rotation="0 102 0">
+                    <a-text align="center" value="<?php echo $randomConfession_3; ?>" material="color:#fff" baseline="center" position="0 1 -7" 
+                            event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                </a-entity>
+                <a-entity id="confession_4" cursor-listener visible="false" rotation="0 153 0">
+                    <a-text align="center" value="<?php echo $randomConfession_4; ?>" material="color:#fff" baseline="center" position="0 1 -7"
+                            event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                </a-entity>
+                <a-entity id="confession_5" cursor-listener visible="false" rotation="0 204 0">
+                    <a-text align="center" value="<?php echo $randomConfession_5; ?>" material="color:#fff" baseline="center" position="0 1 -7"
+                            event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                </a-entity>
+                <a-entity id="confession_6" cursor-listener visible="false" rotation="0 255 0">
+                    <a-text align="center" value="<?php echo $randomConfession_6; ?>" material="color:#fff" baseline="center" position="0 1 -7"
+                            event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                </a-entity>
+                <a-entity id="confession_7" cursor-listener visible="false" rotation="0 306 0">
+                    <a-text align="center" value="<?php echo $randomConfession_7; ?>" material="color:#fff" baseline="center" position="0 1 -7" 
+                            event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                </a-entity>
+        
             </a-scene>
 
 
             <div id="vis" style="visibility: hidden">
 
+<!--
                 <div class="home-page__confession-wrapper">
 
                     <div class="confession" style="display: none">
@@ -155,6 +212,7 @@ mysqli_close($conn);
                         </div>
                     </div>
                 </div>
+-->
                 <form id="confession-form" uk-scrollspy="cls:uk-animation-fade;">
                     <textarea type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
                     <button class="uk-button uk-button-default">Confess</button>

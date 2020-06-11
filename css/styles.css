@@ -27,6 +27,7 @@
 }
 .home-page__wrapper {
   max-width: 80vw;
+  min-width: 50vw;
 }
 .home-page__wrapper .confession__button {
   width: 100%;
