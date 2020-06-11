@@ -155,13 +155,13 @@ mysqli_close($conn);
                     <a-text align="center" value="Tap To Confess" material="color:#fff" position="0 1 -5"
                             event-set__enter="_event: mouseenter; color: #8FF7FF"></a-text>
                 </a-entity>
-                
-                
             
                 
-                <a-entity id="confession_1" cursor-listener visible="false">
+                <a-entity id="confession_1" cursor-listener visible="false" >
+<!--                    animation="property: position; to: 0 1 -7; dur: 2000; easing: linear; loop: true"-->
                     <a-text align="center" value="<?php echo $randomConfession_1; ?>" material="color:#fff" baseline="center" position="0 1 -7"
                             event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                    
                 </a-entity>
                                 
                 <a-entity id="confession_2" cursor-listener visible="false" rotation="0 51 0">

@@ -12,7 +12,8 @@ $(function () {
                 method: "POST",
                 success: function (response) {
                     $(".home-page").fadeOut("slow", function () {
-                        window.location.href = "/confessions";
+                        //window.location.href = "/confessions";
+                       
                     });
                 },
                 error: function (error) {
