@@ -99,14 +99,6 @@ mysqli_close($conn);
             window.start();
             cnt++;
         });
-        
-         
-        var video = document.getElementById("video");
-        video.addEventListener("timeupdate", function() {
-            if (video.currentTime >= 5) {
-                video.pause();
-            }
-        });
 
     </script>
 

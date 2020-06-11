@@ -1,5 +1,5 @@
 $(function () {
-    //Confession Form Page
+//Confession Form Page
     if ($("#confession-form").length > 0) {
 
         //Form Submit
@@ -19,6 +19,14 @@ $(function () {
                     console.error(error);
                 }
             })
+        });
+
+        //Video Time to pause
+        var video = document.getElementById("video");
+        video.addEventListener("timeupdate", function() {
+            if (video.currentTime >= 5) {
+                video.pause();
+            }
         });
 
         //Focusing on text box
@@ -92,8 +100,8 @@ $(function () {
                 for (var i = 0; i < returnArray.length; i++) {
                     for (j = 0; j < returnArray[i].length; j++) {
                         $($(".confessionsPage__column")[i]).append("<p>" + returnArray[i][j]) + "</p>";
-                    
-                        
+
+
                     }
                 }
 
@@ -126,29 +134,35 @@ function printResponse(success, message) {
         $("#response").html(message);
     }
 }
-  function play_1() {
-        var audio = document.getElementById("audio_1");
-        audio.play();
-      }
-     function play_2() {
-        var audio = document.getElementById("audio_2");
-        audio.play();
-      }
-     function play_3() {
-        var audio = document.getElementById("audio_3");
-        audio.play();
-      }
-     function play_4() {
-        var audio = document.getElementById("audio_4");
-        audio.play();
-      }
-     function play_5() {
-        var audio = document.getElementById("audio_5");
-        audio.play();
-      }
-     function play_6() {
-        var audio = document.getElementById("audio_6");
-        audio.play();
-      }
+
+function play_1() {
+    var audio = document.getElementById("audio_1");
+    audio.play();
+}
+
+function play_2() {
+    var audio = document.getElementById("audio_2");
+    audio.play();
+}
+
+function play_3() {
+    var audio = document.getElementById("audio_3");
+    audio.play();
+}
+
+function play_4() {
+    var audio = document.getElementById("audio_4");
+    audio.play();
+}
+
+function play_5() {
+    var audio = document.getElementById("audio_5");
+    audio.play();
+}
+
+function play_6() {
+    var audio = document.getElementById("audio_6");
+    audio.play();
+}
 
 
