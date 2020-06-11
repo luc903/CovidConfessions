@@ -93,13 +93,20 @@ mysqli_close($conn);
             }
 
         };
-
+       
         var cnt = 0;
         document.addEventListener('click', function () {
             window.start();
             cnt++;
         });
-
+        
+         
+        var video = document.getElementById("video");
+        video.addEventListener("timeupdate", function() {
+            if (video.currentTime >= 5) {
+                video.pause();
+            }
+        });
 
     </script>
 
@@ -110,16 +117,16 @@ mysqli_close($conn);
                 <source src="video/background_animation_sm.mp4" type="video/mp4">
             </video>-->-
 
-            <a-scene loading-screen="dotsColor: blue ; backgroundColor: black" background="color: #FAFAFA">
+            <a-scene loading-screen="dotsColor: blue ; backgroundColor: black;" background="color: #FAFAFA" >
                 <a-assets>
-                    <video id="video" autoplay="false" loop="true" crossorigin="anonymous" playsinline=""
+                    <video id="video" autoplay="false" loop="false" crossorigin="anonymous" playsinline=""
                            webkit-playsinline="" poster="images/vr_poster.png">
                         <source src="video/room.mp4" poster="images/vr_poster.png" type="video/mp4">
                     </video>
                 </a-assets>
                 <a-videosphere src="#video" rotation="0 270 0" poster="images/vr_poster.png"></a-videosphere>
                 <a-entity id="test" cursor-listener visible="false">
-                    <a-text align="center" value="<?php echo $randomConfession; ?>" material="color:#fff" position="0 1 -5"
+                    <a-text align="center" value="<?php echo $randomConfession; ?>" material="color:#fff" baseline="center" position="0 1 -5"
                             event-set__enter="_event: mouseenter; color: #8FF7FF"></a-text>
                 </a-entity>
                 <a-entity id="textt" cursor-listener>
