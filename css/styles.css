@@ -114,6 +114,7 @@
 #confession-form textarea {
   display: block;
   margin: 0;
+  margin-top: 10em;
   line-height: calc(2.4rem / 1.5);
   font-size: 1.5rem;
   height: 2.4rem;
@@ -126,7 +127,8 @@
 }
 #confession-form button {
   height: 2.4rem;
-  width: 33.33%;
+/*  width: 33.33%;*/
+  width: 150px;
   margin-top: 1em;
   background-color: #233253;
   color:#F19ECA;

@@ -159,8 +159,8 @@ mysqli_close($conn);
                 </a-assets>
                 <a-videosphere src="#video" rotation="0 270 0" poster="images/vr_poster.png"></a-videosphere>
                 
-                <a-entity id="textt" cursor-listener>
-                    <a-text align="center" value="Tap To Start" material="color:#fff" position="0 1 -5"></a-text>
+                <a-entity id="textt" cursor-listener >
+                    <a-text align="center" value="Tap To Start" material="color:#fff" position="0 1 -5" animation="property: position; to: 0 2 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
                 </a-entity>
 
                 <a-entity id="confess" cursor-listener visible="false">
@@ -169,11 +169,9 @@ mysqli_close($conn);
                 </a-entity>
             
                 
-                <a-entity id="confession_1" cursor-listener visible="false" >
-<!--                    animation="property: position; to: 0 1 -7; dur: 2000; easing: linear; loop: true"-->
+                <a-entity id="confession_1" cursor-listener visible="false" >                 
                     <a-text align="center" value="<?php echo $randomConfession_1; ?>" material="color:#fff" baseline="center" position="0 1 -7"
                             event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
-                    
                 </a-entity>
                                 
                 <a-entity id="confession_2" cursor-listener visible="false" rotation="0 51 0">
