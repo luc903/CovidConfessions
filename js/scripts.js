@@ -26,8 +26,8 @@ $(function () {
     
         var pausing_function = function(){
             var video = document.getElementById("video");
-            if (video.currentTime >= 5) {
-                console.log("OVER 5 SECONDS");
+            if (video.currentTime >= 9) {
+                console.log("OVER 10 SECONDS");
                 video.pause();
                 this.removeEventListener("timeupdate",pausing_function);
                 //video.currentTime = 8;
