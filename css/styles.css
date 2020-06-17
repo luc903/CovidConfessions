@@ -190,4 +190,8 @@ textarea:focus {
   height: fit-content !important;
 }
 
+.a-modal {
+  display: none !important;
+}
+
 /*# sourceMappingURL=styles.css.map */
