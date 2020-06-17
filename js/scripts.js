@@ -11,10 +11,26 @@ $(function () {
                 url: "/ajax/postConfession.php?confession=" + confessionText,
                 method: "POST",
                 success: function (response) {
-                    $(".home-page").fadeOut("slow", function () {
-                        //window.location.href = "/confessions";
-                       
-                    });
+                    var jsonResponse = JSON.parse(response);
+
+                    //Check to see if was accepted
+                    if (jsonResponse.success) {
+                        $("#confession-form").fadeOut("slow");
+
+                        //Continue the video
+                        document.getElementById("video")
+                            .play();
+
+                        //Add visible attribute to all confession text
+                        document.querySelectorAll(".confession-item")
+                            .forEach(function (el) {
+                                el.setAttribute('visible', 'true');
+                            });
+                    }
+                    else {
+                        console.log(jsonResponse.message);
+                    }
+
                 },
                 error: function (error) {
                     console.error(error);
@@ -22,22 +38,31 @@ $(function () {
             })
         });
 
+        document.querySelector(".confession__input")
+            .addEventListener("input", function(event) {
+                if(event.target.value.length >= 250) {
+                    $("#wordLimitError").fadeIn("slow");
+                }
+                else {
+                    $("#wordLimitError").fadeOut("slow");
+                }
+            })
+
         //Video Time to pause
-    
-        var pausing_function = function(){
+        var pausing_function = function () {
             var video = document.getElementById("video");
             if (video.currentTime >= 9) {
                 console.log("OVER 10 SECONDS");
                 video.pause();
-                this.removeEventListener("timeupdate",pausing_function);
+                this.removeEventListener("timeupdate", pausing_function);
                 //video.currentTime = 8;
             }
         };
         video.addEventListener("timeupdate", pausing_function);
-        
+
         //
-        
-        document.addEventListener('DOMContentLoaded', function() {
+
+        document.addEventListener('DOMContentLoaded', function () {
             var scene = document.querySelector('a-scene');
             var splash = document.querySelector('#splash');
             var video = document.getElementById("video");
@@ -46,7 +71,7 @@ $(function () {
                 video.play();
             });
         });
-        
+
         //Focusing on text box
         $(".confession__input").on("focus", function () {
             $(".home-page").addClass("focus");

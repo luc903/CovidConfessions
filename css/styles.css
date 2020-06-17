@@ -5,60 +5,122 @@
 .pull-right {
   float: right;
 }
-/*
-#myVideo {
-  position: fixed;
-  right: 0;
+
+/*  splash screen*/
+#splash {
+  position: absolute;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
   bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  opacity: 0.1;
-  filter: blur(0.5rem);
+  left: 0;
+  right: 0;
+  height: 100vh;
+  margin: auto;
 }
-*/
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 0.25rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: black;
+  animation: spin 1s infinite linear;
+}
+
+#splash h2 {
+  width: 100%;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  left: 0;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 100;
+  animation: in 3s ease-out forwards infinite;
+  animation-delay: 2s;
+}
+
+@keyframes in {
+  0% {
+    letter-spacing: 0px;
+    opacity: 1;
+  }
+  30% {
+    letter-spacing: 10px;
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: 20px;
+    opacity: 0;
+  }
+}
+#splash img {
+  width: 30vh;
+  height: auto;
+  padding: 1em;
+}
+
+.a-enter-ar, .a-enter-vr {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  width: 100%;
+  font-weight: 200;
+  line-height: 16px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.ALT_home-page__confession-wrapper {
+  display: flex;
+  justify-content: center;
+  transition: opacity 500ms;
+}
+
 .home-page {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #F1F1F1;
-  color: #4395D1;
-  font-family: 'Poppins', sans-serif;
 }
 .home-page__wrapper {
   max-width: 80vw;
   min-width: 50vw;
 }
-.home-page__wrapper .confession__button {
+.home-page__wrapper .uk-button-default {
   width: 100%;
+  background-color: white !important;
 }
 .home-page__confession-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   transition: opacity 500ms;
 }
 .home-page.focus .home-page__confession-wrapper {
-  opacity: 0.2;
-  filter: blur(0.2rem);
+  opacity: 0.5;
 }
 .home-page.focus #confession-form {
   opacity: 1;
-
 }
 
 .confession {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 27%;
+  flex: 0 0 28%;
+  border: 1px solid #ccc;
   padding: 2em;
-/*  margin: -1em;*/
-  background: #F9F2EC;
-  font-weight: 600;
- position: relative;
-  -webkit-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
-  -moz-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
-   box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.47);
 }
 .confession:first-of-type {
   margin-left: 0;
@@ -69,16 +131,6 @@
 .confession__body {
   padding: 1em 1.5em;
   position: relative;
-  font-family: 'Work Sans', sans-serif;
-  font-style: italic;
-  font-weight: 200;
-}
-.confession__body p {
-  padding: 1em 1.5em;
-  position: relative;
-  font-family: 'Work Sans', sans-serif;
-  font-style: italic;
-  font-weight: 200;
 }
 .confession__body .uk-icon {
   position: absolute;
@@ -96,12 +148,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.confession__footer .uk-button-default{
-    border: 0px solid #e5e5e5;
-    width: 8vw;
 
-    color: #4395D1;
-}
 #confession-form {
   display: flex;
   flex-wrap: wrap;
@@ -114,158 +161,33 @@
 #confession-form textarea {
   display: block;
   margin: 0;
-  margin-top: 10em;
   line-height: calc(2.4rem / 1.5);
   font-size: 1.5rem;
   height: 2.4rem;
   resize: none;
   margin-bottom: 0.3rem;
-    
-  background: #F9F2EC;
-  color: #4395D1;
-
 }
 #confession-form button {
   height: 2.4rem;
-/*  width: 33.33%;*/
-  width: 150px;
+  width: 33.33%;
   margin-top: 1em;
-  background-color: #233253;
-  color:#F19ECA;
-  font-weight: 600;
-  letter-spacing: .2em;
-    
 }
 #confession-form #response {
   flex: 0 0 100%;
 }
 
-/*#confessionsPage {
-  display: flex;
-  justify-content: space-between;
-  width: 90vw;
-  margin: 0 auto;
-}*/
-
-.confessionsPage{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: #F1F1F1;
-  color: #4395D1;
-  font-family: 'Poppins', sans-serif;
-    
-}
-.confessions-page__wrapper {
-  max-width: 80vw;
-}
-.confessions-page__confession-wrapper {
-  display: flex;
-  justify-content: space-between;
-  transition: opacity 500ms;
-}
-
-/*
-.confessionsPage__column {
-  flex: 0 0 25%;
-}
-*/
-
 /* To add this to separate SCSS file  */
 textarea:focus {
   outline: none !important;
   border-color: inherit !important;
-  -webkit-box-shadow: 2px 2px 2px 1px rgba(35,50,83,0.4)!important;
-  -moz-box-shadow: 2px 2px 2px 1px rgba(35,50,83,0.4)!important;
-  box-shadow: 2px 2px 2px 1px rgba(35,50,83,0.4)!important;
 }
 
-textarea:focus .confession-wrapper{
-    
-}
-video {
-  object-fit: cover;
-}
-
-
-/*  splash screen*/
-#splash {
-  position: absolute;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-flex-direction: column;
-
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100vh;
-
-  margin: auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.loading {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 0.25rem solid rgba(255, 255, 255, 0.2);
-  border-top-color: black;
-  animation: spin 1s infinite linear;
-}
-#splash h2{
-  width: 100%;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  left: 0;
-  text-transform: uppercase;
-  text-align: center;
-  opacity: 100;
-  animation: in 3s ease-out forwards infinite;
-  animation-delay: 2s;
-}
-
-@keyframes in{
-  0%{
-    letter-spacing: 0px;
-    opacity: 1;
-  }
-  30%{
-    letter-spacing: 10px;
-    opacity: 0;
-  }
-  100%{
-    letter-spacing: 20px;
-    opacity: 0;
-  }
-}
-#splash img {
-    width: 30vh;
-    height: auto;
-    padding: 1em;
-    
-}
-
-.a-enter-ar, .a-enter-vr {
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    width: 100%;
-    font-weight: 200;
-    line-height: 16px;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+.a-enter-vr-button {
+  width: fit-content !important;
+  position: fixed !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: fit-content !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

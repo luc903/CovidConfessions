@@ -25,18 +25,25 @@ if (0 < count(array_intersect(array_map('strtolower', explode(' ', $c)), $badWor
 $sql = "INSERT INTO confessions (text, isSafe)
 VALUES ('$c', $isSafe)";
 
-if (mysqli_query($conn, $sql)) {
+if (trim($c) === '') {
+    $response->success = false;
+    $response->message = "String empty";
 
-    if ($isSafe) {
-
-        $conn->close();
-
-        $response->success = true;
-        $response->message = "Your confession has been added";
-        echo json_encode($response);
-    }
+    echo json_encode($response);
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    if (mysqli_query($conn, $sql)) {
+
+        if ($isSafe) {
+
+            $conn->close();
+
+            $response->success = true;
+            $response->message = "Your confession has been added";
+            echo json_encode($response);
+        }
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 }
 
 
