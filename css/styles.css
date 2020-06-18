@@ -175,13 +175,22 @@
 }
 #confession-form button {
   height: 2.4rem;
-  width: 33.33%;
+  max-width: 50%;
   margin-top: 1em;
 }
 #confession-form #response {
   flex: 0 0 100%;
 }
 
+@media only screen and (max-width: 768px) {
+  #confession-form {
+    max-width: 100%;
+  }
+
+  .home-page__wrapper {
+    max-width: 95vw;
+  }
+}
 /* To add this to separate SCSS file  */
 textarea:focus {
   outline: none !important;

@@ -187,11 +187,21 @@
   }
   button {
     height: $inputHeight;
-    width: 33.33%;
+    max-width: 50%;
     margin-top: 1em;
   }
 
   #response {
     flex: 0 0 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #confession-form {
+    max-width: 100%;
+  }
+
+  .home-page__wrapper {
+    max-width: 95vw;
   }
 }

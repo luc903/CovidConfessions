@@ -88,7 +88,7 @@ $(function () {
 
                 document.getElementById('vis')
                     .style.visibility = 'visible';
-                
+
                 placeholder();
 
                 this.removeEventListener("timeupdate", pausing_function);

@@ -15,8 +15,6 @@ while ($row = $result->fetch_row()) {
     $rows[] = $row[0];
 }
 
-print_r($rows);
-
 $randomConfession_1 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 7")->fetch_object()->text;
 
 
@@ -80,7 +78,7 @@ mysqli_close($conn);
 
             <!--<video autoplay muted loop id="myVideo">
                 <source src="video/background_animation_sm.mp4" type="video/mp4">
-            </video>-->-
+            </video>-->
 
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
                      background="color: #FAFAFA">
@@ -96,8 +94,6 @@ mysqli_close($conn);
                     <a-text align="center" value="Tap To Begin" color="white" position="0 1 -5" opacity="0"
                             animation="property: position; to: 0 2 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
-                            -->
-                        >
                     </a-text>
                 </a-entity>
 
