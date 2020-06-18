@@ -79,9 +79,6 @@ mysqli_close($conn);
                 var el1 = document.querySelector('#textt');
                 el1.setAttribute('visible', 'false');
 
-                var el1 = document.querySelector('#confess');
-                el1.setAttribute('visible', 'true');
-
             }
             if (cnt == 1) {
                 document.querySelector(".confession-item").setAttribute('visible', 'true');
@@ -91,11 +88,8 @@ mysqli_close($conn);
                 } else {
                     x.style.visibility = 'hidden';
                 }
-                var el1 = document.querySelector('#confess');
-                el1.setAttribute('visible', 'false');
 
             }
-
         };
 
         var cnt = 0;
@@ -113,7 +107,7 @@ mysqli_close($conn);
 
         <div class="home-page__wrapper">
             <div id="splash">
-                <h2>Covid Confessions</h2>
+                <h2>Confessions</h2>
                 <div class="loading"></div>
                 <img src="images/ACE.jpg">
             </div>
@@ -126,28 +120,28 @@ mysqli_close($conn);
                      background="color: #FAFAFA">
                 <a-assets>
                     <video id="video" autoplay="false" loop="false" crossorigin="anonymous" playsinline=""
-                           webkit-playsinline="" poster="images/vr_poster.png">
-                        <source src="video/room.mp4" poster="images/vr_poster.png" type="video/mp4">
+                           webkit-playsinline="">
+                        <source src="video/room.mp4" type="video/mp4">
                     </video>
                 </a-assets>
                 <a-videosphere src="#video" rotation="0 270 0" poster="images/vr_poster.png"></a-videosphere>
 
                 <a-entity id="textt" cursor-listener>
-                    <a-text align="center" value="Tap To Start" material="color:#fff" position="0 1 -5"
-                            animation="property: position; to: 0 2 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
-                </a-entity>
-
-                <a-entity id="confess" cursor-listener visible="false">
-                    <a-text align="center" value="Tap To Confess" material="color:#fff" position="0 1 -5"
-                            event-set__enter="_event: mouseenter; color: #8FF7FF"></a-text>
+                    <a-text align="center" value="Tap To Begin" color="white" position="0 1 -5" opacity="0"
+                            animation="property: position; to: 0 2 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;" 
+                            animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"-->
+                            >
+                    </a-text>            
                 </a-entity>
 
                 <?php $rotations = ["", "0 51 0", "0 102 0", "0 153 0", "0 204 0", "0 255 0", "0 306 0"]   ?>
+                <?php $position_movement = ["0 2 -7", "0 1 -7", "0 2 -7", "0 0 -7", "0 1 -7", "0 2 -7", "0 1 -7"]   ?>
                 <?php for($i = 0; $i < Count($rows); $i++): ?>
                     <a-entity class="confession-item" cursor-listener visible="false" rotation="<?php echo $rotations[$i] ?>">
                         <a-text align="center" value="<?php echo $rows[$i]; ?>" material="color:#fff"
-                                baseline="center" position="0 1 -7"
-                                event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"></a-text>
+                                baseline="center" position="0 3 -7"
+                                event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"
+                                animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
                     </a-entity>
                 <?php endfor; ?>
 
@@ -178,7 +172,7 @@ mysqli_close($conn);
                 <form id="confession-form" uk-scrollspy="cls:uk-animation-fade;">
                     <textarea type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
                     <button class="uk-button uk-button-default">Confess</button>
-                    <p id="wordLimitError" style="color: red; display: none; width: 100%; text-align: center;">You have reached the maximum amount of characters</p>
+                    <p id="wordLimitError" style="color: red; display: none; width: 100%; text-align: center;">That's a few too many words for us!</p>
                 </form>
 
 

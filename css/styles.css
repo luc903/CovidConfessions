@@ -47,6 +47,7 @@
   text-transform: uppercase;
   text-align: center;
   opacity: 100;
+  margin: 0 0 1em;
   animation: in 3s ease-out forwards infinite;
   animation-delay: 2s;
 }
@@ -69,6 +70,7 @@
   width: 30vh;
   height: auto;
   padding: 1em;
+  margin: 2em 0 0;
 }
 
 .a-enter-ar, .a-enter-vr {
@@ -86,6 +88,10 @@
   display: flex;
   justify-content: center;
   transition: opacity 500ms;
+}
+
+#home-page {
+  background: #000;
 }
 
 .home-page {

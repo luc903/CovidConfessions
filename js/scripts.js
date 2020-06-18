@@ -49,18 +49,35 @@ $(function () {
             })
 
         //Video Time to pause
-        var pausing_function = function () {
+         var pausing_function = function () {
             var video = document.getElementById("video");
             if (video.currentTime >= 9) {
                 console.log("OVER 10 SECONDS");
                 video.pause();
                 this.removeEventListener("timeupdate", pausing_function);
                 //video.currentTime = 8;
-            }
+         }
+//            document.querySelector(".confession-item").setAttribute('visible', 'true');
+//                var x = document.getElementById('vis');
+//                if (x.style.visibility === 'hidden') {
+//                    x.style.visibility = 'visible';
+//                } else {
+//                    x.style.visibility = 'hidden';
+//                }
         };
         video.addEventListener("timeupdate", pausing_function);
+        
+        //Video end loop
+         var loop_function = function () {
+            var video = document.getElementById("video");
+            if (video.currentTime >= 48) {
+                console.log("Looping");
+                video.currentTime = 39;
+                video.play();
+         }
+        };
+        video.addEventListener("timeupdate", loop_function);
 
-        //
 
         document.addEventListener('DOMContentLoaded', function () {
             var scene = document.querySelector('a-scene');
