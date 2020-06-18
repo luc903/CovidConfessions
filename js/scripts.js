@@ -1,5 +1,35 @@
+var twoSecondsPassed = false;
+
+window.setTimeout(function () {
+    twoSecondsPassed = true;
+}, 2000);
+
 $(function () {
-//Confession Form Page
+
+    //Load page
+    // function LoadPage() {
+    //     var scene = document.querySelector('a-scene');
+    //     var splash = document.querySelector('#splash');
+    //     var video = document.getElementById("video");
+    //
+    //     if (twoSecondsPassed) {
+    //         scene.addEventListener('loaded', function (e) {
+    //             document.getElementById('splash').fadeOut(1500);
+    //             video.play();
+    //         });
+    //     }
+    //     else {
+    //         window.setTimeout(function() {
+    //             LoadPage()
+    //         }, 1000);
+    //     }
+    // }
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     LoadPage();
+    // });
+
+
+    //Confession Form Page
     if ($("#confession-form").length > 0) {
 
         //Form Submit
@@ -26,8 +56,7 @@ $(function () {
                             .forEach(function (el) {
                                 el.setAttribute('visible', 'true');
                             });
-                    }
-                    else {
+                    } else {
                         console.log(jsonResponse.message);
                     }
 
@@ -38,68 +67,71 @@ $(function () {
             })
         });
 
+        //Character limit
         document.querySelector(".confession__input")
-            .addEventListener("input", function(event) {
-                if(event.target.value.length >= 250) {
+            .addEventListener("input", function (event) {
+                if (event.target.value.length >= 250) {
                     $("#wordLimitError").fadeIn("slow");
-                }
-                else {
+                } else {
                     $("#wordLimitError").fadeOut("slow");
                 }
             })
 
         //Video Time to pause
-         var pausing_function = function () {
+        var pausing_function = function () {
             var video = document.getElementById("video");
-            if (video.currentTime >= 9) {
-                console.log("OVER 10 SECONDS");
+            if (video.currentTime >= 8) {
                 video.pause();
+
+                document.querySelector(".confession-item")
+                    .setAttribute('visible', 'true');
+
+                document.getElementById('vis')
+                    .style.visibility = 'visible';
+                
+                placeholder();
+
                 this.removeEventListener("timeupdate", pausing_function);
-                //video.currentTime = 8;
-         }
-//            document.querySelector(".confession-item").setAttribute('visible', 'true');
-//                var x = document.getElementById('vis');
-//                if (x.style.visibility === 'hidden') {
-//                    x.style.visibility = 'visible';
-//                } else {
-//                    x.style.visibility = 'hidden';
-//                }
+            }
         };
         video.addEventListener("timeupdate", pausing_function);
-        
+
         //Video end loop
-         var loop_function = function () {
+        var loop_function = function () {
             var video = document.getElementById("video");
             if (video.currentTime >= 48) {
                 console.log("Looping");
                 video.currentTime = 39;
                 video.play();
-         }
+            }
         };
         video.addEventListener("timeupdate", loop_function);
 
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var scene = document.querySelector('a-scene');
-            var splash = document.querySelector('#splash');
-            var video = document.getElementById("video");
-            scene.addEventListener('loaded', function (e) {
-                document.getElementById('splash').fadeOut(1500);
-                video.play();
-            });
-        });
 
         //Focusing on text box
         $(".confession__input").on("focus", function () {
             $(".home-page").addClass("focus");
         })
 
+        var isLoaded = false;
+        document.addEventListener("click", function () {
+            if (isLoaded == false) {
+                var videoEl = document.querySelector('#video');
+                videoEl.play();
+
+                var el1 = document.querySelector('#textt');
+                el1.setAttribute('visible', 'false');
+
+                isLoaded = true;
+            }
+        })
+
+
         //Placeholder text animation
         var ph = "I confess that...",
             searchBar = $('.confession__input'),
             // placeholder loop counter
-            phCount = 0,
-            count = 0;
+            phCount = 0
 
         // function to return random number between with min/max range
         function randDelay(min, max) {
@@ -135,16 +167,9 @@ $(function () {
 
         // function to init animation
         function placeholder() {
-            if (count == 6) {
-                $(searchBar).attr("placeholder", "");
-                printLetter(ph, searchBar);
-            }
+            $(searchBar).attr("placeholder", "");
+            printLetter(ph, searchBar);
         }
-
-        $(".confession").fadeIn("slow", function () {
-            count++;
-            placeholder();
-        })
 
     }
 
