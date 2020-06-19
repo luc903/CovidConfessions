@@ -21,13 +21,16 @@ $randomConfession_1 = $conn->query("SELECT text FROM confessions WHERE isSafe='1
 mysqli_close($conn);
 
 ?>
+    <audio id="audio_1" src="../audio/confessions_intro_1.mp3"></audio>
+<!--    <audio id="audio_1" src="../audio/confession_1.mp3"></audio>-->
+<!--    <audio id="audio_2" src="../audio/confession_2.mp3"></audio>--
 
-    <audio id="audio_1" src="../audio/confession_1.mp3"></audio>
-    <audio id="audio_2" src="../audio/confession_2.mp3"></audio>
+<!--
     <audio id="audio_3" src="../audio/confession_3.mp3"></audio>
     <audio id="audio_4" src="../audio/confession_4.mp3"></audio>
     <audio id="audio_5" src="../audio/confession_5.mp3"></audio>
     <audio id="audio_6" src="../audio/confession_6.mp3"></audio>
+-->
 
     <script>
 
@@ -126,8 +129,8 @@ mysqli_close($conn);
                     </a-entity>
                 <?php endfor; ?>
                 
-                <a-entity id="reload" visible="false"  reload>
-                  <a-text align="center" value="See More" color="#d630e9" position="0 -1 -5" opacity ="1" geometry="primitive:plane" material="opacity: 0" animation="property: position; to:0 -1 -4; dur: 5000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
+                <a-entity id="reload" visible="false" rotation="0 51 0" reload>
+                  <a-text align="center" value="See More" color="#d630e9" position="2 2 -5" opacity ="1" geometry="primitive:plane; height: 4; width: 1.5;" material="opacity: 0"  animation="property: position; to:2 2 -5; dur: 5000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
                </a-entity>
                
 <!--                <a-camera><a-cursor></a-cursor></a-camera>-->

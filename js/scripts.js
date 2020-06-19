@@ -51,15 +51,6 @@ $(function () {
                         document.getElementById("video")
                             .play();
                         
-                         var reloader = document.querySelector('#reload');
-                         reloader.setAttribute('visible', 'true');
-
-
-                        //Add visible attribute to all confession text
-                        document.querySelectorAll(".confession-item")
-                            .forEach(function (el) {
-                                el.setAttribute('visible', 'true');
-                            });
                     } else {
                         console.log(jsonResponse.message);
                     }
@@ -84,7 +75,7 @@ $(function () {
         //Video Time to pause
         var pausing_function = function () {
             var video = document.getElementById("video");
-            if (video.currentTime >= 8) {
+            if (video.currentTime >= 10) {
                 video.pause();
 
                 document.querySelector(".confession-item")
@@ -99,6 +90,27 @@ $(function () {
             }
         };
         video.addEventListener("timeupdate", pausing_function);
+        
+        
+        //load More confessions
+        var load_function = function () {
+            var video = document.getElementById("video");
+            if (video.currentTime >= 42) {
+                
+                  var reloader = document.querySelector('#reload');
+                         reloader.setAttribute('visible', 'true');
+
+
+                        //Add visible attribute to all confession text
+                        document.querySelectorAll(".confession-item")
+                            .forEach(function (el) {
+                                el.setAttribute('visible', 'true');
+                            });
+                
+                this.removeEventListener("timeupdate", load_function);
+            }
+        };
+        video.addEventListener("timeupdate", load_function);
 
         //Video end loop
         var loop_function = function () {
@@ -110,8 +122,7 @@ $(function () {
             }
         };
         video.addEventListener("timeupdate", loop_function);
-
-
+                
         //Focusing on text box
         $(".confession__input").on("focus", function () {
             $(".home-page").addClass("focus");
@@ -125,6 +136,9 @@ $(function () {
 
                 var el1 = document.querySelector('#textt');
                 el1.setAttribute('visible', 'false');
+                
+                var x = document.getElementById("audio_1"); 
+                x.play(); 
                 
                 isLoaded = true;
             }
