@@ -100,8 +100,8 @@ mysqli_close($conn);
 
 
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
-                     background="color: #FAFAFA" cursor="rayOrigin: mouse" cursor-listener>
-                <a-assets timeout="3000">
+                     background="color: #FAFAFA" cursor-listener>
+                <a-assets>
                     <video id="video" autoplay="false" preload="" loop="false" crossorigin="anonymous" playsinline=""
                            webkit-playsinline="" src="video/room.mp4">
                        <source src="video/room.mp4" type="video/mp4">
