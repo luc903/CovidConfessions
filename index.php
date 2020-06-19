@@ -61,7 +61,26 @@ mysqli_close($conn);
                 }
             }
         }
-
+    
+        AFRAME.registerComponent('reload', {
+            schema: {
+              default: ''
+            },
+            init() {
+              const reload = document.querySelector('#reload');
+              var b = false
+              this.el.addEventListener('click', () => {
+                if (b) {
+                    reload.setAttribute('visible', 'false');
+                } else {
+                   reload.setAttribute('visible', 'true');
+                }
+                b = !b;
+                console.log('Reload');
+              });
+            }
+          });
+                
 
     </script>
 
@@ -76,39 +95,42 @@ mysqli_close($conn);
                 <img src="images/ACE.jpg">
             </div>
 
-            <!--<video autoplay muted loop id="myVideo">
-                <source src="video/background_animation_sm.mp4" type="video/mp4">
-            </video>-->
 
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
-                     background="color: #FAFAFA">
-                <a-assets>
-                    <video id="video" autoplay="false" loop="false" crossorigin="anonymous" playsinline=""
-                           webkit-playsinline="">
-                        <source src="video/room.mp4" type="video/mp4">
+                     background="color: #FAFAFA" cursor="rayOrigin: mouse" cursor-listener>
+                <a-assets timeout="3000">
+                    <video id="video" autoplay="false" preload="" loop="false" crossorigin="anonymous" playsinline=""
+                           webkit-playsinline="" src="video/room.mp4">
+                       <source src="video/room.mp4" type="video/mp4">
                     </video>
                 </a-assets>
-                <a-videosphere src="#video" rotation="0 270 0" poster="images/vr_poster.png"></a-videosphere>
+                <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
+              
 
                 <a-entity id="textt" cursor-listener>
                     <a-text align="center" value="Tap To Begin" color="white" position="0 1 -5" opacity="0"
                             animation="property: position; to: 0 2 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
-                    </a-text>
+></a-text>
                 </a-entity>
 
                 <?php $rotations = ["", "0 51 0", "0 102 0", "0 153 0", "0 204 0", "0 255 0", "0 306 0"] ?>
                 <?php $position_movement = ["0 2 -7", "0 1 -7", "0 2 -7", "0 0 -7", "0 1 -7", "0 2 -7", "0 1 -7"] ?>
                 <?php for ($i = 0; $i < Count($rows); $i++): ?>
-                    <a-entity class="confession-item" cursor-listener visible="false"
+                    <a-entity class="confession-item"  visible="false"
                               rotation="<?php echo $rotations[$i] ?>">
                         <a-text align="center" value="<?php echo $rows[$i]; ?>" material="color:#fff"
                                 baseline="center" position="0 3 -7"
-                                event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="30"
+                                event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="35"
                                 animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
                     </a-entity>
                 <?php endfor; ?>
-
+                
+                <a-entity id="reload" visible="false"  reload>
+                  <a-text align="center" value="See More" color="#d630e9" position="0 -1 -5" opacity ="1" geometry="primitive:plane" material="opacity: 0" animation="property: position; to:0 -1 -4; dur: 5000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
+               </a-entity>
+               
+<!--                <a-camera><a-cursor></a-cursor></a-camera>-->
             </a-scene>
 
 

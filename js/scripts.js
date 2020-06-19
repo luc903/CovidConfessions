@@ -50,6 +50,10 @@ $(function () {
                         //Continue the video
                         document.getElementById("video")
                             .play();
+                        
+                         var reloader = document.querySelector('#reload');
+                         reloader.setAttribute('visible', 'true');
+
 
                         //Add visible attribute to all confession text
                         document.querySelectorAll(".confession-item")
@@ -99,9 +103,9 @@ $(function () {
         //Video end loop
         var loop_function = function () {
             var video = document.getElementById("video");
-            if (video.currentTime >= 48) {
+            if (video.currentTime >= 58) {
                 console.log("Looping");
-                video.currentTime = 39;
+                video.currentTime = 43;
                 video.play();
             }
         };
@@ -121,11 +125,11 @@ $(function () {
 
                 var el1 = document.querySelector('#textt');
                 el1.setAttribute('visible', 'false');
-
+                
                 isLoaded = true;
             }
         })
-
+    
 
         //Placeholder text animation
         var ph = "I confess that...",
