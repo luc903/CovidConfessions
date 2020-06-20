@@ -8,3 +8,22 @@
 //.confessionsPage__column {
 //  flex: 0 0 25%;
 //}
+.confessionsPage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #F1F1F1;
+  color: #4395D1;
+  font-family: 'Poppins', sans-serif;
+    
+}
+.confessions-page__wrapper {
+  max-width: 80vw;
+    min-width: 40vw;
+}
+.confessions-page__confession-wrapper {
+  display: flex;
+  justify-content: space-between;
+  transition: opacity 500ms;
+}
