@@ -14,7 +14,7 @@
   right: 0;
   height: 100vh;
 
-  margin: auto;
+//  margin: auto;
 }
 
 @keyframes spin {
@@ -34,7 +34,8 @@
   border-top-color: black;
   animation: spin 1s infinite linear;
 }
-#splash h2{
+#splash h1{
+
   width: 100%;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -53,11 +54,11 @@
     opacity: 1;
   }
   30%{
-    letter-spacing: 10px;
+    letter-spacing: 30px;
     opacity: 0;
   }
   100%{
-    letter-spacing: 20px;
+    letter-spacing: 50px;
     opacity: 0;
   }
 }
@@ -66,7 +67,7 @@
   height: auto;
   padding: 1em;
   margin: 2em 0 0;
-
+  //margin-top: auto;
 }
 
 .a-enter-ar, .a-enter-vr {
@@ -123,48 +124,6 @@
   }
 }
 
-.confession {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 0 0 28%;
-  border: 1px solid #ccc;
-  padding: 2em;
-
-  &:first-of-type {
-    margin-left: 0;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  &__body {
-    padding: 1em 1.5em;
-    position: relative;
-
-    .uk-icon {
-      position: absolute;
-      top: 0;
-
-      &:first-child {
-        left: 0;
-        transform: RotateY(180deg);
-      }
-
-      &:last-child {
-        right: 0;
-      }
-    }
-  }
-
-  &__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
 #confession-form {
   $inputHeight: 2.4rem;
   display: flex;
@@ -188,7 +147,7 @@
   }
   button {
     height: $inputHeight;
-    max-width: 50%;
+    max-width: 48%;
     margin-top: 1em;
   }
 

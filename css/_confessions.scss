@@ -13,17 +13,85 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #F1F1F1;
-  color: #4395D1;
+  background: #000;
+  color: #fff;
   font-family: 'Poppins', sans-serif;
+    
     
 }
 .confessions-page__wrapper {
   max-width: 80vw;
-    min-width: 40vw;
+  min-width: 40vw;
 }
 .confessions-page__confession-wrapper {
   display: flex;
   justify-content: space-between;
   transition: opacity 500ms;
+}
+
+@keyframes neon {
+  0%   {-webkit-box-shadow: 0px 0px 15px 0px rgba(214,48,233,1);
+      -moz-box-shadow: 0px 0px 15px 0px rgba(214,48,233,1);
+      box-shadow: 0px 0px 15px 0px rgba(214,48,233,1);}
+  50%  {    -webkit-box-shadow: 0px 0px 15px 0px rgba(101,2,193,1);
+-moz-box-shadow: 0px 0px 15px 0px rgba(101,2,193,1);
+box-shadow: 0px 0px 15px 0px rgba(101,2,193,1);
+    }
+  100% {-webkit-box-shadow: 0px 0px 15px 0px rgba(27,1,184,1);
+-moz-box-shadow: 0px 0px 15px 0px rgba(27,1,184,1);
+box-shadow: 0px 0px 15px 0px rgba(27,1,184,1);}
+}
+
+.confession {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 27%;
+  border: 1px solid #ccc;
+  padding: 1em; 
+  margin: 1em; 
+    
+  &__1 {
+    animation: neon 6s linear 0s infinite alternate;
+  }
+ &__2 {
+     animation: neon 6s linear 1s infinite alternate;
+    }
+&__3 {
+    animation: neon 6s linear 2s infinite alternate;
+  }
+
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &__body {
+    padding: 1em 1.5em;
+    position: relative;
+
+    .uk-icon {
+      position: absolute;
+      top: 0;
+
+      &:first-child {
+        left: 0;
+        transform: RotateY(180deg);
+      }
+
+      &:last-child {
+        right: 0;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

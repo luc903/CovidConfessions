@@ -2,7 +2,7 @@ var twoSecondsPassed = false;
 
 window.setTimeout(function () {
     twoSecondsPassed = true;
-}, 2000);
+}, 5000);
 
 $(function () {
 
@@ -31,6 +31,7 @@ $(function () {
 
     //Confession Form Page
     if ($("#confession-form").length > 0) {
+        
 
         //Form Submit
         $("#confession-form").on("submit", function (event) {
@@ -75,7 +76,7 @@ $(function () {
         //Video Time to pause
         var pausing_function = function () {
             var video = document.getElementById("video");
-            if (video.currentTime >= 10) {
+            if (video.currentTime >= 12.5) {
                 video.pause();
 
                 document.querySelector(".confession-item")
@@ -95,7 +96,7 @@ $(function () {
         //load More confessions
         var load_function = function () {
             var video = document.getElementById("video");
-            if (video.currentTime >= 42) {
+            if (video.currentTime >= 44) {
                 
                   var reloader = document.querySelector('#reload');
                          reloader.setAttribute('visible', 'true');
@@ -115,9 +116,9 @@ $(function () {
         //Video end loop
         var loop_function = function () {
             var video = document.getElementById("video");
-            if (video.currentTime >= 58) {
+            if (video.currentTime >= 60) {
                 console.log("Looping");
-                video.currentTime = 43;
+                video.currentTime = 45;
                 video.play();
             }
         };

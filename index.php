@@ -8,14 +8,14 @@
 include("includes/header.php");
 require_once("config.php");
 
-$query = "SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 7";
+$query = "SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 5";
 $result = $conn->query($query);
 
 while ($row = $result->fetch_row()) {
     $rows[] = $row[0];
 }
 
-$randomConfession_1 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 7")->fetch_object()->text;
+$randomConfession_1 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 5")->fetch_object()->text;
 
 
 mysqli_close($conn);
@@ -96,8 +96,9 @@ mysqli_close($conn);
 
         <div class="home-page__wrapper">
             <div id="splash">
-                <h2>Confessions</h2>
+                <h1>Confessions</h1>
                 <div class="loading"></div>
+                <p></p>
                 <img src="images/ACE.jpg">
             </div>
 
@@ -123,13 +124,13 @@ mysqli_close($conn);
 ></a-text>
                 </a-entity>
 
-                <?php $rotations = ["", "0 51 0", "0 102 0", "0 153 0", "0 204 0", "0 255 0", "0 306 0"] ?>
-                <?php $position_movement = ["0 2 -7", "0 1 -7", "0 2 -7", "0 0 -7", "0 1 -7", "0 2 -7", "0 1 -7"] ?>
+                <?php $rotations = ["", "0 72 0", "0 144 0", "0 216 0", "0 288 0"] ?>
+                <?php $position_movement = ["0 2 -5", "0 0 -5", "0 2 -5", "0 0 -5", "0 2 -5"] ?>
                 <?php for ($i = 0; $i < Count($rows); $i++): ?>
                     <a-entity class="confession-item"  visible="false"
                               rotation="<?php echo $rotations[$i] ?>">
                         <a-text align="center" value="<?php echo $rows[$i]; ?>" material="color:#fff"
-                                baseline="center" position="0 3 -7"
+                                baseline="center" position="0 1 -5"
                                 event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="35"
                                 animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;" opacity = "1" shadow>
                             
@@ -160,6 +161,7 @@ mysqli_close($conn);
                 <form id="confession-form" uk-scrollspy="cls:uk-animation-fade;">
                     <textarea type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
                     <button class="uk-button uk-button-default">Confess</button>
+<!--                <button id="skip" class="uk-button uk-button-default" >I'll come back</button>-->
                     <p id="wordLimitError" style="color: red; display: none; width: 100%; text-align: center;">That's a
                         few too many words for us!</p>
                 </form>
