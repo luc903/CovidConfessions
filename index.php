@@ -149,8 +149,8 @@ mysqli_close($conn);
                     </a-entity>
                 <?php endfor; ?>
                 
-                <a-entity id="reload" visible="false" rotation="0 51 0" reload>
-                  <a-text align="center" value="See More" color="#d630e9" position="2 2 -5" opacity ="1" geometry="primitive:plane; height: 4; width: 1.5;" material="opacity: 0"  animation="property: position; to:2 2 -5; dur: 5000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
+                <a-entity id="reload" visible="false" rotation="0 51 0" reload geometry="primitive:plane; height: 0; width: 0;">
+                  <a-text align="center" value="See More" color="#d630e9" position="2 2 -5" opacity ="1"  material="opacity: 0"  animation="property: position; to:2 2 -5; dur: 5000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
                </a-entity>
                
 <!--                <a-camera><a-cursor></a-cursor></a-camera>-->

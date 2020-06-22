@@ -99,7 +99,12 @@ $(function () {
             if (video.currentTime >= 44) {
                 
                   var reloader = document.querySelector('#reload');
-                         reloader.setAttribute('visible', 'true');
+                        reloader.setAttribute('visible', 'true');
+                    
+                        reloader.setAttribute('geometry', {
+                        height: 4, 
+                        width: 1.5
+                        });
 
 
                         //Add visible attribute to all confession text
