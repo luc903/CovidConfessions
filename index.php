@@ -64,35 +64,44 @@ mysqli_close($conn);
                 }
             }
         }
-    
-        AFRAME.registerComponent('reload', {
+        
+        AFRAME.registerComponent('start', {
             schema: {
               default: ''
             },
             init() {
-              const reload = document.querySelector('#reload');
+              const start = document.querySelector('#start');
               var b = false
               this.el.addEventListener('click', () => {
-                if (b) {
-                    reload.setAttribute('visible', 'false');
-                    $(".home-page").fadeOut("slow", function () {
-                        window.location.href = "/confessions";
-                    });
-                } else {
-                   reload.setAttribute('visible', 'true');
-                }
+                  
+                start.setAttribute('geometry', {
+                        height: 0, 
+                        width: 0
+                });
+
+                  
+                var videoEl = document.querySelector('#video');
+                videoEl.play();
+
+                var el1 = document.querySelector('#textt');
+                el1.setAttribute('visible', 'false');
+                
+                var cam1 = document.querySelector('#camera');
+                cam1.setAttribute('animation', 'to: 0 360 0');
+                
+                var x = document.getElementById("audio_1"); 
+                x.play(); 
+               
                 b = !b;
-                console.log('Reload');
+                console.log('Start');
               });
             }
           });
                 
-
     </script>
 
 
     <div class="home-page">
-
 
         <div class="home-page__wrapper">
             <div id="splash">
@@ -106,8 +115,9 @@ mysqli_close($conn);
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
                      background="color: #FAFAFA" cursor-listener>
                 
-                <a-entity id="camera" camera="" position="0 1 0" look-controls cursor="rayOrigin: mouse"></a-entity>
-                
+                <a-camera id="camera" rotation="0 180 0" look-controls cursor="rayOrigin: mouse" animation="property: rotation; to:0 180 0; dur: 13000; easing: easeOutSine;"> 
+                </a-camera>
+
                 <a-assets>
                     <video id="video" autoplay="false" preload="" loop="false" crossorigin="anonymous" playsinline=""
                            webkit-playsinline="" src="video/room.mp4">
@@ -116,55 +126,49 @@ mysqli_close($conn);
                 </a-assets>
                 <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
               
-
-                <a-entity id="textt" cursor-listener>
-                    <a-text align="center" value="Tap To Begin" color="white" position="0 1 -5" opacity="0"
-                            animation="property: position; to: 0 2 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
-                            animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
-></a-text>
+                <a-entity id="textt">
+                    <a-text align="center" value="Welcome to our Anonymous Confessions Experience" color="white" position="0 2 -4" opacity="0"
+                            animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine;"></a-text>
+                    
+                    <a-text  align="center" value="Tap To Begin" color="white" position="0 0 -5" opacity="0"
+                            id="start" geometry="primitive:plane; height: 2; width: 3;" material="opacity: 0" start
+                            animation="property: position; to: 0 1 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
+                            animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;">
+                    </a-text>
                 </a-entity>
 
-                <?php $rotations = ["", "0 72 0", "0 144 0", "0 216 0", "0 288 0"] ?>
-                <?php $position_movement = ["0 2 -5", "0 0 -5", "0 2 -5", "0 0 -5", "0 2 -5"] ?>
+                <?php $rotations = ["0 0 0", "0 72 0", "0 144 0", "0 216 0", "0 288 0"] ?>
+                <?php $position_movement = ["0 3 -5", "0 0 -5", "0 1 -5", "0 0 -5", "0 1 -5"] ?>
                 <?php for ($i = 0; $i < Count($rows); $i++): ?>
+                
                     <a-entity class="confession-item"  visible="false"
-                              rotation="<?php echo $rotations[$i] ?>">
+                              rotation="<?php echo $rotations[$i] ?>"
+                              >
                         <a-text align="center" value="<?php echo $rows[$i]; ?>" material="color:#fff"
-                                baseline="center" position="0 1 -5"
+                                baseline="center" position="0 3 -5"
                                 event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="35"
-                                animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;" opacity = "1" shadow>
-                            
-                           <a-animation attribute="opasity"
-                                   dur="1000"
-                                   to="0"
-                                   begin="click"
-                                   delay ="10"
-                                   dur="1500" 
-                                   fill="forwards">
-                            </a-animation>
-                        
-        
+                                animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;" 
+                                opacity= "0" 
+                                animation__2="property: opacity; to:0; dur: 5000; easing: easeInSine;">
                         
                         </a-text>
                     </a-entity>
                 <?php endfor; ?>
                 
-                <a-entity id="reload" visible="false" rotation="0 51 0" reload geometry="primitive:plane; height: 0; width: 0;">
-                  <a-text align="center" value="See More" color="#d630e9" position="2 2 -5" opacity ="1"  material="opacity: 0"  animation="property: position; to:2 2 -5; dur: 5000; easing: easeInSine; loop: true; dir:alternate;"></a-text>
-               </a-entity>
-               
-<!--                <a-camera><a-cursor></a-cursor></a-camera>-->
+
             </a-scene>
 
-
             <div id="vis" style="visibility: hidden">
+                
                 <form id="confession-form" uk-scrollspy="cls:uk-animation-fade;">
+                    <p>Type your anonymous confession here</p>
                     <textarea type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
-                    <button class="uk-button uk-button-default">Confess</button>
-<!--                <button id="skip" class="uk-button uk-button-default" >I'll come back</button>-->
+                    <button value="submit" class="uk-button uk-button-default">Confess</button>
+                    <button id="skip" value="skip" class="uk-button uk-button-default" >I'll come back</button>
                     <p id="wordLimitError" style="color: red; display: none; width: 100%; text-align: center;">That's a
                         few too many words for us!</p>
                 </form>
+                
             </div>
 
         </div>

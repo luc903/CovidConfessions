@@ -133,7 +133,11 @@
   margin: 5em auto;
   transition: opacity 500ms;
   opacity: .5;
-
+    
+  p {
+    margin-top: 6em;
+    color:#fff;
+    }
 
   textarea {
     display: block;
@@ -143,7 +147,6 @@
     height: $inputHeight;
     resize: none;
     margin-bottom: .3rem;
-    margin-top: 6em;
   }
   button {
     height: $inputHeight;

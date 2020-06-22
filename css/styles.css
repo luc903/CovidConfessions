@@ -128,6 +128,10 @@
   transition: opacity 500ms;
   opacity: 0.5;
 }
+#confession-form p {
+  margin-top: 6em;
+  color: #fff;
+}
 #confession-form textarea {
   display: block;
   margin: 0;
@@ -136,7 +140,6 @@
   height: 2.4rem;
   resize: none;
   margin-bottom: 0.3rem;
-  margin-top: 6em;
 }
 #confession-form button {
   height: 2.4rem;
