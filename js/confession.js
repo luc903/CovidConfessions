@@ -14,18 +14,18 @@ var confession = function () {
     //Initiate Confessions Page
     var init = function () {
         confessions = _getConfessions();
-        loadConfessions(9);
+        _loadConfessions(9);
 
         //Scroll event
         window.onscroll = function (ev) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                confession.loadConfessions(6);
+                _loadConfessions(6);
             }
         };
     }
 
     //Load in n amount of confessions
-    var loadConfessions = function (n) {
+    var _loadConfessions = function (n) {
         var html = "";
         var limit = i + n;
 
@@ -89,7 +89,6 @@ var confession = function () {
 
     //Return public functions
     return {
-        init: init,
-        loadConfessions: loadConfessions
+        init: init
     }
 }();
