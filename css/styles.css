@@ -57,11 +57,11 @@
     opacity: 1;
   }
   30% {
-    letter-spacing: 5em;
+    letter-spacing: 1em;
     opacity: 0;
   }
   100% {
-    letter-spacing: 10em;
+    letter-spacing: 3em;
     opacity: 0;
   }
 }
@@ -129,7 +129,6 @@
   opacity: 0.5;
 }
 #confession-form #instruction {
-  margin-top: 6em;
   color: #fff;
 }
 #confession-form textarea {

@@ -130,7 +130,7 @@ mysqli_close($conn);
                     <a-text align="center" value="Welcome to our Anonymous Confessions Experience" color="white" wrap-count="25" position="0 2 -5" opacity="0"
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine;"></a-text>
                     
-                    <a-text  align="center" value="Tap To Begin" color="white" position="0 0 -5" opacity="0"
+                    <a-text  align="center" value="Click Here To Begin" color="white" position="0 0 -5" opacity="0"
                             id="start" geometry="primitive:plane; height: 2; width: 3;" material="opacity: 0" start
                             animation="property: position; to: 0 1 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;">
@@ -154,8 +154,6 @@ mysqli_close($conn);
                         </a-text>
                     </a-entity>
                 <?php endfor; ?>
-                
-
             </a-scene>
 
             <div id="vis" style="visibility: hidden">
