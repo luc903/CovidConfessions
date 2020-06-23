@@ -78,7 +78,7 @@ $(function () {
         //Character limit
         document.querySelector(".confession__input")
             .addEventListener("input", function (event) {
-                if (event.target.value.length >= 250) {
+                if (event.target.value.length >= 500) {
                     $("#wordLimitError").fadeIn("slow");
                 } else {
                     $("#wordLimitError").fadeOut("slow");
@@ -94,18 +94,24 @@ $(function () {
         var isLoaded = false;
         document.addEventListener("click", function () {
             if (isLoaded == false) {
-//                var videoEl = document.querySelector('#video');
-//                videoEl.play();
-//
-//                var el1 = document.querySelector('#textt');
-//                el1.setAttribute('visible', 'false');
-//                
-//                var cam1 = document.querySelector('#camera');
-//                cam1.setAttribute('animation', 'to: 0 360 0');
-//                
-//                var x = document.getElementById("audio_1"); 
-//                x.play(); 
-//                
+            
+                start.setAttribute('geometry', {
+                        height: 0, 
+                        width: 0
+                });
+                  
+                var videoEl = document.querySelector('#video');
+                videoEl.play();
+
+                var el1 = document.querySelector('#textt');
+                el1.setAttribute('visible', 'false');
+                
+                var cam1 = document.querySelector('#camera');
+                cam1.setAttribute('animation', 'to: 0 360 0');
+                
+                var x = document.getElementById("audio_1"); 
+                x.play(); 
+                  
                 isLoaded = true;
             }
         })

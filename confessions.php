@@ -27,7 +27,7 @@ include("includes/header.php");
                             <small>May 2020</small>
                        </div>
                     </div>
-                    <div class="confession confession__2" uk-scrollspy="cls:uk-animation-fade; delay: 500">
+                    <div class="confession confession__2" uk-scrollspy="cls:uk-animation-fade; delay: 250">
                         <p>I confess that...</p>
                         <div class="confession__body">
                             <span uk-icon="icon: quote-right"></span>
@@ -40,7 +40,7 @@ include("includes/header.php");
                             <small>May 2020</small>
                        </div>
                     </div>
-                    <div class="confession confession__3" uk-scrollspy="cls:uk-animation-fade; delay: 1000">
+                    <div class="confession confession__3" uk-scrollspy="cls:uk-animation-fade; delay: 500">
                         <p>I confess that...</p>
                         <div class="confession__body">
                             <span uk-icon="icon: quote-right"></span>
@@ -56,7 +56,7 @@ include("includes/header.php");
                 
             </div>
             <div class="confessions-page__confession-wrapper">
-                    <div class="confession confession__1" uk-scrollspy="cls:uk-animation-fade; delay: 1500">
+                    <div class="confession confession__1" uk-scrollspy="cls:uk-animation-fade; delay: 750">
                         <p>I confess that...</p>
                         <div class="confession__body">
                             <span uk-icon="icon: quote-right"></span>
@@ -69,7 +69,7 @@ include("includes/header.php");
                             <small>May 2020</small>
                        </div>
                     </div>
-                    <div class="confession confession__2" uk-scrollspy="cls:uk-animation-fade; delay: 2000">
+                    <div class="confession confession__2" uk-scrollspy="cls:uk-animation-fade; delay: 1000">
                         <p>I confess that...</p>
                         <div class="confession__body">
                             <span uk-icon="icon: quote-right"></span>
@@ -82,7 +82,7 @@ include("includes/header.php");
                             <small>May 2020</small>
                        </div>
                     </div>
-                    <div class="confession confession__3" uk-scrollspy="cls:uk-animation-fade; delay: 2500">
+                    <div class="confession confession__3" uk-scrollspy="cls:uk-animation-fade; delay: 1250">
                         <p>I confess that...</p>
                         <div class="confession__body">
                             <span uk-icon="icon: quote-right"></span>
@@ -98,7 +98,7 @@ include("includes/header.php");
 
                 </div>
             <div class="confessions-page__confession-wrapper">
-                    <div class="confession confession__1" uk-scrollspy="cls:uk-animation-fade; delay: 3000">
+                    <div class="confession confession__1" uk-scrollspy="cls:uk-animation-fade; delay: 1500">
                         <p>I confess that...</p>
                         <div class="confession__body">
                             <span uk-icon="icon: quote-right"></span>
@@ -111,7 +111,7 @@ include("includes/header.php");
                             <small>May 2020</small>
                        </div>
                     </div>
-                    <div class="confession confession__2" uk-scrollspy="cls:uk-animation-fade; delay: 3500">
+                    <div class="confession confession__2" uk-scrollspy="cls:uk-animation-fade; delay: 1750">
                         <p>I confess that...</p>
                         <div class="confession__body">
                             <span uk-icon="icon: quote-right"></span>
@@ -124,7 +124,7 @@ include("includes/header.php");
                             <small>May 2020</small>
                        </div>
                     </div>
-                    <div class="confession confession__3" uk-scrollspy="cls:uk-animation-fade; delay: 4000">
+                    <div class="confession confession__3" uk-scrollspy="cls:uk-animation-fade; delay: 2000">
                         <p>I confess that...</p>
                         <div class="confession__body">
                             <span uk-icon="icon: quote-right"></span>

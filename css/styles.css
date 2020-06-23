@@ -57,11 +57,11 @@
     opacity: 1;
   }
   30% {
-    letter-spacing: 30px;
+    letter-spacing: 5em;
     opacity: 0;
   }
   100% {
-    letter-spacing: 50px;
+    letter-spacing: 10em;
     opacity: 0;
   }
 }
@@ -128,7 +128,7 @@
   transition: opacity 500ms;
   opacity: 0.5;
 }
-#confession-form p {
+#confession-form #instruction {
   margin-top: 6em;
   color: #fff;
 }
@@ -254,6 +254,7 @@ textarea:focus {
   right: 0 !important;
   top: 0 !important;
   height: fit-content !important;
+  display: none !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

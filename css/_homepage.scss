@@ -54,11 +54,11 @@
     opacity: 1;
   }
   30%{
-    letter-spacing: 30px;
+    letter-spacing: 5em;
     opacity: 0;
   }
   100%{
-    letter-spacing: 50px;
+    letter-spacing: 10em;
     opacity: 0;
   }
 }
@@ -134,7 +134,7 @@
   transition: opacity 500ms;
   opacity: .5;
     
-  p {
+  #instruction {
     margin-top: 6em;
     color:#fff;
     }

@@ -74,26 +74,26 @@ mysqli_close($conn);
               var b = false
               this.el.addEventListener('click', () => {
                   
-                start.setAttribute('geometry', {
-                        height: 0, 
-                        width: 0
-                });
-
-                  
-                var videoEl = document.querySelector('#video');
-                videoEl.play();
-
-                var el1 = document.querySelector('#textt');
-                el1.setAttribute('visible', 'false');
-                
-                var cam1 = document.querySelector('#camera');
-                cam1.setAttribute('animation', 'to: 0 360 0');
-                
-                var x = document.getElementById("audio_1"); 
-                x.play(); 
-               
-                b = !b;
-                console.log('Start');
+//                start.setAttribute('geometry', {
+//                        height: 0, 
+//                        width: 0
+//                });
+//
+//                  
+//                var videoEl = document.querySelector('#video');
+//                videoEl.play();
+//
+//                var el1 = document.querySelector('#textt');
+//                el1.setAttribute('visible', 'false');
+//                
+//                var cam1 = document.querySelector('#camera');
+//                cam1.setAttribute('animation', 'to: 0 360 0');
+//                
+//                var x = document.getElementById("audio_1"); 
+//                x.play(); 
+//               
+//                b = !b;
+//                console.log('Start');
               });
             }
           });
@@ -115,7 +115,7 @@ mysqli_close($conn);
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
                      background="color: #FAFAFA" cursor-listener>
                 
-                <a-camera id="camera" rotation="0 180 0" look-controls cursor="rayOrigin: mouse" animation="property: rotation; to:0 180 0; dur: 13000; easing: easeOutSine;"> 
+                <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; to:0 180 0; dur: 13000; easing: easeOutSine;"> 
                 </a-camera>
 
                 <a-assets>
@@ -127,7 +127,7 @@ mysqli_close($conn);
                 <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
               
                 <a-entity id="textt">
-                    <a-text align="center" value="Welcome to our Anonymous Confessions Experience" color="white" position="0 2 -4" opacity="0"
+                    <a-text align="center" value="Welcome to our Anonymous Confessions Experience" color="white" wrap-count="25" position="0 2 -5" opacity="0"
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine;"></a-text>
                     
                     <a-text  align="center" value="Tap To Begin" color="white" position="0 0 -5" opacity="0"
@@ -144,7 +144,7 @@ mysqli_close($conn);
                     <a-entity class="confession-item"  visible="false"
                               rotation="<?php echo $rotations[$i] ?>"
                               >
-                        <a-text align="center" value="<?php echo $rows[$i]; ?>" material="color:#fff"
+                        <a-text align="center" value="Example: <?php echo $rows[$i]; ?>" material="color:#fff"
                                 baseline="center" position="0 3 -5"
                                 event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="35"
                                 animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;" 
@@ -161,7 +161,7 @@ mysqli_close($conn);
             <div id="vis" style="visibility: hidden">
                 
                 <form id="confession-form" uk-scrollspy="cls:uk-animation-fade;">
-                    <p>Type your anonymous confession here</p>
+                    <p id="instruction">Type your anonymous confession here</p>
                     <textarea type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
                     <button value="submit" class="uk-button uk-button-default">Confess</button>
                     <button id="skip" value="skip" class="uk-button uk-button-default" >I'll come back</button>
