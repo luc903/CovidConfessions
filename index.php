@@ -162,7 +162,7 @@ mysqli_close($conn);
                     <p id="instruction">Type your anonymous confession here</p>
                     <textarea type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
                     <button value="submit" class="uk-button uk-button-default">Confess</button>
-                    <button id="skip" value="skip" class="uk-button uk-button-default" >I'll come back</button>
+                    <button id="skip" type="button" class="uk-button uk-button-default" >I'll come back</button>
                     <p id="wordLimitError" style="color: red; display: none; width: 100%; text-align: center;">That's a
                         few too many words for us!</p>
                 </form>

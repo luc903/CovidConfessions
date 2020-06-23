@@ -50,19 +50,7 @@ $(function () {
 
                     //Check to see if was accepted
                     if (jsonResponse.success) {
-                        $("#confession-form").fadeOut("slow");
-
-                        //Continue the video
-                        document.getElementById("video")
-                        .play();
-                        
-                        //Fades out confessions for fly through.
-                         document.querySelectorAll(".confession-item") 
-                                .forEach(function (el) {
-                                var insideEl = el.querySelector('a-text')
-                                insideEl.setAttribute('animation__2', 'to: 0');
-
-                         });
+                        proceedToConfessions();
                         
                     } else {
                         console.log(jsonResponse.message);
@@ -74,6 +62,27 @@ $(function () {
                 }
             })
         });
+
+        //Skip confession
+        $("#skip").on("click", function() {
+            proceedToConfessions();
+        })
+
+        function proceedToConfessions() {
+            $("#confession-form").fadeOut("slow");
+
+            //Continue the video
+            document.getElementById("video")
+                .play();
+
+            //Fades out confessions for fly through.
+            document.querySelectorAll(".confession-item")
+                .forEach(function (el) {
+                    var insideEl = el.querySelector('a-text')
+                    insideEl.setAttribute('animation__2', 'to: 0');
+
+                });
+        }
 
         //Character limit
         document.querySelector(".confession__input")
