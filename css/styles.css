@@ -177,6 +177,7 @@
   display: flex;
   justify-content: space-between;
   transition: opacity 500ms;
+  flex-wrap: wrap;
 }
 
 @keyframes neon {
@@ -198,21 +199,14 @@
 }
 .confession {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 27%;
+  flex-direction: column;
+  flex: 0 0 calc(33.33% - .8em);
   border: 1px solid #ccc;
   padding: 1em;
-  margin: 1em;
-}
-.confession__1 {
+  margin: 1em 0.2em;
   animation: neon 6s linear 0s infinite alternate;
-}
-.confession__2 {
-  animation: neon 6s linear 1s infinite alternate;
-}
-.confession__3 {
-  animation: neon 6s linear 2s infinite alternate;
+  box-sizing: border-box;
 }
 .confession:first-of-type {
   margin-left: 0;

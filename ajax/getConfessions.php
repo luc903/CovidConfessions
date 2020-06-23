@@ -8,16 +8,15 @@
 
 require_once ("../config.php");
 
-$result = mysqli_query($conn, "SELECT * FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 9");
+$sql = "SELECT * FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 9";
+$result = $conn->query($sql);
+$result_array = array();
 
-$count = 0;
-while($row = mysqli_fetch_row($result)){
-    $postsarray[] = $row[1];
-    $count++;
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        array_push($result_array, $row);
+    }
 }
-$encodedArray = array_map(utf8_encode, $postsarray);
-
-
-echo json_encode($postsarray);
+echo json_encode($result_array);
 
 mysqli_close($conn);

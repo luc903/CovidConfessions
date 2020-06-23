@@ -230,32 +230,6 @@ $(function () {
         }
 
     }
-
-    //View Confession page
-    if ($("#confessionsPage").length > 0) {
-
-        $.ajax({
-            url: "/ajax/getConfessions.php",
-            success: function (response) {
-                var JSONresponse = JSON.parse(response);
-                var returnArray = splitArray(JSONresponse, 1);
-
-                for (var i = 0; i < returnArray.length; i++) {
-                    for (j = 0; j < returnArray[i].length; j++) {
-                        $($(".confessionsPage__column")[i]).append("<p>" + returnArray[i][j]) + "</p>";
-
-
-                    }
-                }
-
-                //$("#confessionsPage").fadeIn("slow");
-
-            },
-            error: function (error) {
-                console.log(error);
-            }
-        })
-    }
 });
 
 function splitArray(Array, chunk_size) {

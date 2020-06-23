@@ -8,7 +8,7 @@
 //.confessionsPage__column {
 //  flex: 0 0 25%;
 //}
-.confessionsPage{
+.confessionsPage {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,51 +16,50 @@
   background: #000;
   color: #fff;
   font-family: 'Poppins', sans-serif;
-    
-    
+
+
 }
+
 .confessions-page__wrapper {
   max-width: 80vw;
   min-width: 40vw;
 }
+
 .confessions-page__confession-wrapper {
   display: flex;
   justify-content: space-between;
   transition: opacity 500ms;
+  flex-wrap: wrap;
 }
 
 @keyframes neon {
-  0%   {-webkit-box-shadow: 0px 0px 15px 0px rgba(214,48,233,1);
-      -moz-box-shadow: 0px 0px 15px 0px rgba(214,48,233,1);
-      box-shadow: 0px 0px 15px 0px rgba(214,48,233,1);}
-  50%  {    -webkit-box-shadow: 0px 0px 15px 0px rgba(101,2,193,1);
--moz-box-shadow: 0px 0px 15px 0px rgba(101,2,193,1);
-box-shadow: 0px 0px 15px 0px rgba(101,2,193,1);
-    }
-  100% {-webkit-box-shadow: 0px 0px 15px 0px rgba(27,1,184,1);
--moz-box-shadow: 0px 0px 15px 0px rgba(27,1,184,1);
-box-shadow: 0px 0px 15px 0px rgba(27,1,184,1);}
+  0% {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(214, 48, 233, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(214, 48, 233, 1);
+    box-shadow: 0px 0px 15px 0px rgba(214, 48, 233, 1);
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(101, 2, 193, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(101, 2, 193, 1);
+    box-shadow: 0px 0px 15px 0px rgba(101, 2, 193, 1);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(27, 1, 184, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(27, 1, 184, 1);
+    box-shadow: 0px 0px 15px 0px rgba(27, 1, 184, 1);
+  }
 }
 
 .confession {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 27%;
+  flex-direction: column;
+  flex: 0 0 calc(33.33% - .8em);
   border: 1px solid #ccc;
-  padding: 1em; 
-  margin: 1em; 
-    
-  &__1 {
-    animation: neon 6s linear 0s infinite alternate;
-  }
- &__2 {
-     animation: neon 6s linear 1s infinite alternate;
-    }
-&__3 {
-    animation: neon 6s linear 2s infinite alternate;
-  }
-
+  padding: 1em;
+  margin: 1em .2em;
+  animation: neon 6s linear 0s infinite alternate;
+  box-sizing: border-box;
 
   &:first-of-type {
     margin-left: 0;
