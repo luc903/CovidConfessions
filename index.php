@@ -22,15 +22,6 @@ mysqli_close($conn);
 
 ?>
     <audio id="audio_1" src="../audio/confessions_intro_1.mp3"></audio>
-<!--    <audio id="audio_1" src="../audio/confession_1.mp3"></audio>-->
-<!--    <audio id="audio_2" src="../audio/confession_2.mp3"></audio>--
-
-<!--
-    <audio id="audio_3" src="../audio/confession_3.mp3"></audio>
-    <audio id="audio_4" src="../audio/confession_4.mp3"></audio>
-    <audio id="audio_5" src="../audio/confession_5.mp3"></audio>
-    <audio id="audio_6" src="../audio/confession_6.mp3"></audio>
--->
 
     <script>
 
@@ -119,7 +110,7 @@ mysqli_close($conn);
                 </a-camera>
 
                 <a-assets>
-                    <video id="video" autoplay="false" preload="" loop="false" crossorigin="anonymous" playsinline=""
+                    <video id="video" preload="" loop="false" crossorigin="anonymous" playsinline=""
                            webkit-playsinline="" src="video/room.mp4">
                        <source src="video/room.mp4" type="video/mp4">
                     </video>
@@ -160,7 +151,7 @@ mysqli_close($conn);
                 
                 <form id="confession-form" uk-scrollspy="cls:uk-animation-fade;">
                     <p id="instruction">Type your anonymous confession here</p>
-                    <textarea type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
+                    <textarea type="text" maxlength="500" class="confession__input uk-textarea"></textarea>
                     <button value="submit" class="uk-button uk-button-default">Confess</button>
                     <button id="skip" type="button" class="uk-button uk-button-default" >I'll come back</button>
                     <p id="wordLimitError" style="color: red; display: none; width: 100%; text-align: center;">That's a
