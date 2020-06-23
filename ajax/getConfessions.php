@@ -8,7 +8,7 @@
 
 require_once ("../config.php");
 
-$sql = "SELECT * FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 9";
+$sql = "SELECT * FROM confessions WHERE isSafe='1' ORDER BY RAND()";
 $result = $conn->query($sql);
 $result_array = array();
 
