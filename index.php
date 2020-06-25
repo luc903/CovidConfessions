@@ -106,8 +106,10 @@ mysqli_close($conn);
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
                      background="color: #FAFAFA" cursor-listener>
                 
-                <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; to:0 180 0; dur: 13000; easing: easeOutSine;"> 
+
+                <a-camera id="camera" rotation="0 180 0" look-controls cursor="rayOrigin: mouse" animation="property: rotation; to:0 180 0; dur: 13000; easing: easeOutSine;"> 
                 </a-camera>
+
 
                 <a-assets>
                     <video id="video" preload="" loop="false" crossorigin="anonymous" playsinline=""
@@ -127,6 +129,15 @@ mysqli_close($conn);
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;">
                     </a-text>
                 </a-entity>
+                
+                <a-entity id="instructions" opacity="0" animation="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;">
+                    <a-text id="instructions__text" align="center" value="This scene is interactive" color="white" wrap-count="25" position="0 0 -6" opacity="0" 
+                    animation="property: opacity; to: 0; dur: 3000; easing: easeInSine;"
+                    ></a-text>
+                </a-entity>
+                
+                
+                
 
                 <?php $rotations = ["0 0 0", "0 72 0", "0 144 0", "0 216 0", "0 288 0"] ?>
                 <?php $position_movement = ["0 3 -5", "0 0 -5", "0 1 -5", "0 0 -5", "0 1 -5"] ?>
@@ -136,8 +147,7 @@ mysqli_close($conn);
                               rotation="<?php echo $rotations[$i] ?>"
                               >
                         <a-text align="center" value="Example: <?php echo $rows[$i]; ?>" material="color:#fff"
-                                baseline="center" position="0 3 -5"
-                                event-set__enter="_event: mouseenter; color: #8FF7FF" wrap-count="35"
+                                baseline="center" position="0 3 -5" wrap-count="35"
                                 animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;" 
                                 opacity= "0" 
                                 animation__2="property: opacity; to:0; dur: 5000; easing: easeInSine;">

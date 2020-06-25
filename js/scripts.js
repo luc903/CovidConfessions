@@ -81,6 +81,8 @@ $(function () {
                     insideEl.setAttribute('animation__2', 'to: 0');
 
                 });
+            
+            document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
         }
 
         //Character limit
@@ -142,10 +144,14 @@ $(function () {
                     insideEl.setAttribute('animation__2', 'to: 1');
                 
                 });
+            
 
-                document.getElementById('vis')
-                    .style.visibility = 'visible';
-
+                document.getElementById('vis').style.visibility = 'visible';
+                
+                document.getElementById('instructions').setAttribute('visible', 'true');
+                
+                document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
+                
                 placeholder();
 
                 this.removeEventListener("timeupdate", pausing_function);

@@ -125,6 +125,11 @@
   justify-content: space-around;
   max-width: 60%;
   margin: 5em auto;
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 15px 0px #d630e9;
+  -moz-box-shadow: 0px 0px 15px 0px #d630e9;
+  box-shadow: 0px 0px 15px 0px #d630e9;
   transition: opacity 500ms;
   opacity: 0.5;
 }
@@ -185,23 +190,6 @@ body, html {
   flex-wrap: wrap;
 }
 
-@keyframes neon {
-  0% {
-    -webkit-box-shadow: 0px 0px 15px 0px #d630e9;
-    -moz-box-shadow: 0px 0px 15px 0px #d630e9;
-    box-shadow: 0px 0px 15px 0px #d630e9;
-  }
-  50% {
-    -webkit-box-shadow: 0px 0px 15px 0px #6502c1;
-    -moz-box-shadow: 0px 0px 15px 0px #6502c1;
-    box-shadow: 0px 0px 15px 0px #6502c1;
-  }
-  100% {
-    -webkit-box-shadow: 0px 0px 15px 0px #1b01b8;
-    -moz-box-shadow: 0px 0px 15px 0px #1b01b8;
-    box-shadow: 0px 0px 15px 0px #1b01b8;
-  }
-}
 .confession {
   display: flex;
   justify-content: space-between;
@@ -253,6 +241,24 @@ textarea:focus {
   top: 0 !important;
   height: fit-content !important;
   display: none !important;
+}
+
+@keyframes neon {
+  0% {
+    -webkit-box-shadow: 0px 0px 15px 0px #d630e9;
+    -moz-box-shadow: 0px 0px 15px 0px #d630e9;
+    box-shadow: 0px 0px 15px 0px #d630e9;
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 15px 0px #6502c1;
+    -moz-box-shadow: 0px 0px 15px 0px #6502c1;
+    box-shadow: 0px 0px 15px 0px #6502c1;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 15px 0px #1b01b8;
+    -moz-box-shadow: 0px 0px 15px 0px #1b01b8;
+    box-shadow: 0px 0px 15px 0px #1b01b8;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
