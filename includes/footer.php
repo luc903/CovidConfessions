@@ -20,7 +20,7 @@
         <span uk-icon="icon: quote-right"></span>
     </div>
     <div class="confession__footer">
-        <small>May 2020</small>
+        <small>{{dateAdded}}</small>
     </div>
 </div>
 

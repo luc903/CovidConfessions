@@ -22,8 +22,10 @@ if (0 < count(array_intersect(array_map('strtolower', explode(' ', $c)), $badWor
     $isSafe = 0;
 }
 
-$sql = "INSERT INTO confessions (text, isSafe)
-VALUES ('$c', $isSafe)";
+$todaysDate = date('F Y');
+
+$sql = "INSERT INTO confessions (text, isSafe, dateAdded)
+VALUES ('$c', $isSafe, '$todaysDate')";
 
 if (trim($c) === '') {
     $response->success = false;
