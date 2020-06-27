@@ -37,6 +37,10 @@ body, html {
   transition: opacity 500ms;
   flex-wrap: wrap;
 }
+.confession:hover{
+filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
 
 .confession {
   display: flex;
@@ -48,6 +52,11 @@ body, html {
   margin: 1em .2em;
   animation: neon 6s linear 0s infinite alternate;
   box-sizing: border-box;
+  //background: url(../images/dots.png) bottom;
+    //background-size: cover;
+    transition: filter 500ms;
+    filter: blur(5px);
+  -webkit-filter: blur(5px);
 
   &:first-of-type {
     margin-left: 0;
@@ -82,4 +91,5 @@ body, html {
     align-items: center;
     margin-left: auto;
   }
+
 }

@@ -151,7 +151,7 @@ mysqli_close($conn);
                               rotation="<?php echo $rotations[$i] ?>"
                               >
                         <a-text align="center" value="Example: <?php echo $rows[$i]; ?>" color="#d630e9"
-                                geometry="primitive:plane; width: 5;" material="opacity: 0.2; colour: #000"
+                                geometry="primitive:plane; width: 5;" material="opacity: 0; colour: #000"
                                 baseline="center" position="<?php echo $position_start[$i] ?>"; wrap-count="35"
                                 animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;" 
                                 opacity= "0" 

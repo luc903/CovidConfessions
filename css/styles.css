@@ -189,6 +189,11 @@ body, html {
   flex-wrap: wrap;
 }
 
+.confession:hover {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
+
 .confession {
   display: flex;
   justify-content: space-between;
@@ -199,6 +204,9 @@ body, html {
   margin: 1em 0.2em;
   animation: neon 6s linear 0s infinite alternate;
   box-sizing: border-box;
+  transition: filter 500ms;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
 }
 .confession:first-of-type {
   margin-left: 0;
