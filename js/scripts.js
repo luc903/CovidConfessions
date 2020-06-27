@@ -83,6 +83,7 @@ $(function () {
                 });
             
             document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
+            document.getElementById('instructions__mouse').setAttribute('animation__2', 'to: 0');
         }
 
         //Character limit
@@ -151,6 +152,7 @@ $(function () {
                 document.getElementById('instructions').setAttribute('visible', 'true');
                 
                 document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
+                document.getElementById('instructions__mouse').setAttribute('animation__2', 'to: 1');
                 
                 placeholder();
 
@@ -270,32 +272,5 @@ function play_1() {
     var audio = document.getElementById("audio_1");
     audio.play();
 }
-
-function play_2() {
-    var audio = document.getElementById("audio_2");
-    audio.play();
-}
-
-function play_3() {
-    var audio = document.getElementById("audio_3");
-    audio.play();
-}
-
-function play_4() {
-    var audio = document.getElementById("audio_4");
-    audio.play();
-}
-
-function play_5() {
-    var audio = document.getElementById("audio_5");
-    audio.play();
-}
-
-function play_6() {
-    var audio = document.getElementById("audio_6");
-    audio.play();
-}
-
-
 
 
