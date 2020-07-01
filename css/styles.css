@@ -138,11 +138,13 @@
 #confession-form textarea {
   display: block;
   margin: 0;
-  line-height: calc(2.4rem / 1.5);
   font-size: 1.5rem;
-  height: 2.4rem;
   resize: none;
   margin-bottom: 0.3rem;
+}
+#confession-form .character-count {
+  width: 100%;
+  color: white;
 }
 #confession-form button {
   height: 2.4rem;
@@ -175,6 +177,16 @@ body, html {
   color: #fff;
   font-family: "Poppins", sans-serif;
   margin-bottom: 10rem;
+}
+
+.confessions-page__back-btn {
+  position: fixed;
+  top: 2rem;
+  left: 0.5rem;
+  color: white;
+}
+.confessions-page__back-btn .uk-icon {
+  color: white;
 }
 
 .confessions-page__wrapper {

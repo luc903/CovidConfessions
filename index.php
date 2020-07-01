@@ -166,7 +166,8 @@ mysqli_close($conn);
                 
                 <form id="confession-form" uk-scrollspy="cls:uk-animation-fade;">
                     <p id="instruction">Type your anonymous confession here</p>
-                    <textarea type="text" maxlength="500" class="confession__input uk-textarea"></textarea>
+                    <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden" type="text" maxlength="250" class="confession__input uk-textarea"></textarea>
+                    <span class="character-count"></span>
                     <button value="submit" class="uk-button uk-button-default">Confess</button>
                     <button id="skip" type="button" class="uk-button uk-button-default" >I'll come back</button>
                     <p id="wordLimitError" style="color: red; display: none; width: 100%; text-align: center;">That's a

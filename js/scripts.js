@@ -34,6 +34,9 @@ $(function () {
         
         
         var x = document.getElementById("myBtn");
+
+        //Init character count
+        $(".character-count").html(characterCount(""));
         
         
         //Form Submit
@@ -89,12 +92,16 @@ $(function () {
         //Character limit
         document.querySelector(".confession__input")
             .addEventListener("input", function (event) {
-                if (event.target.value.length >= 500) {
+                var _this = this;
+
+                if (event.target.value.length >= 250) {
                     $("#wordLimitError").fadeIn("slow");
                 } else {
                     $("#wordLimitError").fadeOut("slow");
                 }
-            })
+
+                $(".character-count").html(characterCount(event.target.value));
+            });
 
     
                     //Focusing on text box
@@ -260,6 +267,12 @@ function splitArray(Array, chunk_size) {
     return returnArray;
 }
 
+function characterCount(input, limit = 250) {
+    var charCount = input.length;
+
+    return charCount.toString() + "/" + limit.toString();
+}
+
 function printResponse(success, message) {
     if (success) {
         $("#response").html(message);
@@ -267,6 +280,11 @@ function printResponse(success, message) {
         $("#response").html(message);
     }
 }
+
+function textAreaAdjust(o) {
+    o.style.height = "1px";
+    o.style.height = (25+o.scrollHeight)+"px";
+  }
 
 function play_1() {
     var audio = document.getElementById("audio_1");

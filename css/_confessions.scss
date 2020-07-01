@@ -26,6 +26,17 @@ body, html {
 
 }
 
+.confessions-page__back-btn {
+  position: fixed;
+  top: 2rem;
+  left: .5rem;
+  color: white;
+
+  .uk-icon {
+    color: white;
+  }
+}
+
 .confessions-page__wrapper {
   max-width: 80vw;
   min-width: 40vw;

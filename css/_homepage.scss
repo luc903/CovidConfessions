@@ -151,12 +151,18 @@
   textarea {
     display: block;
     margin: 0;
-    line-height: calc(#{$inputHeight} / 1.5);
+    // line-height: calc(#{$inputHeight} / 1.5);
     font-size: 1.5rem;
-    height: $inputHeight;
+    // height: $inputHeight;
     resize: none;
     margin-bottom: .3rem;
   }
+
+  .character-count {
+    width: 100%;
+    color: white;
+  }
+
   button {
     height: $inputHeight;
     max-width: 48%;
