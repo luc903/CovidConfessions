@@ -12,6 +12,8 @@ $badWords = ["4r5e", "5h1t", "5hit", "a55", "anal", "anus", "ar5e", "arrse", "ar
 $isSafe = 1;
 
 $c = $_REQUEST["confession"];
+$c = make_safe($c);
+$c = htmlspecialchars($c);
 
 $response = new stdClass();
 
@@ -48,5 +50,12 @@ if (trim($c) === '') {
     }
 }
 
+function make_safe($variable) {
+    global $conn;
+
+    $variable = trim($variable);
+    $variable = mysqli_real_escape_string($conn, $variable);
+    return $variable;
+}
 
 mysqli_close($conn);
