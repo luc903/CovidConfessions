@@ -16,6 +16,7 @@
     <meta property="og:image" content="https://confessions.audacious.org.uk/images/render_room.png">
     <meta property="og:description" content="The anonymous portal will absorb your Confessions. The ritual of confessing helps with your well-being. Share those confessions anonymously and be part of our online global participatory project">
     <meta property="og:title" content="Confessions">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="images/png" sizes="32x32" href="/favicon-32x32.png">
