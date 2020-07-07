@@ -15,7 +15,8 @@ var confession = function () {
     var init = function () {
         confessions = _getConfessions();
         _loadConfessions(9);
-
+        _initAudioLoop();
+        
         //Scroll event
         window.onscroll = function (ev) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
@@ -23,12 +24,12 @@ var confession = function () {
             }
         };
     }
-
+    
     //Load in n amount of confessions
     var _loadConfessions = function (n) {
         var html = "";
         var limit = i + n;
-
+        
         if (!limitReached) {
             //Concatenate HTML
             while (i < limit) {
@@ -40,10 +41,10 @@ var confession = function () {
                     break;
                 }
             }
-
+            
             //Append HTML to container
             $(".confessions-page__confession-wrapper").append(html);
-
+            
             //Fade each confession in
             $(".confession", ".confessions-page__confession-wrapper").each(function (i) {
                 $(this).delay((i + 1) * 50).fadeIn();
@@ -53,11 +54,11 @@ var confession = function () {
             return;
         }
     }
-
+    
     //Get Confessions data
     var _getConfessions = function () {
         var result;
-
+        
         $.ajax({
             url: "/ajax/getConfessions.php",
             async: false,
@@ -68,10 +69,10 @@ var confession = function () {
                 console.log(error);
             }
         });
-
+        
         return result;
     }
-
+    
     //Bind data to HTML
     var _bindData = function (data) {
         if (data !== undefined) {
@@ -80,13 +81,39 @@ var confession = function () {
             var compiled_template = Handlebars.compile(template);
             //Render the data into the template
             var rendered = compiled_template(data);
-
+            
             return rendered;
         } else {
             return null;
         }
     }
+    
+    //Lopped audio configuration
+    var _initAudioLoop = function() {
+        var audioCliplocation = "/audio";
+        var audioClipPrefix = "confession_";
+        var audioClipExt = "mp3";
+        var audioClipLength = 6;
+        var audioClipFiles = [];
+        var audioClipIndex = 0;
+        var audioClipIntervalTime = 60; //In seconds
+        
+        for(var i = 0; i <= audioClipLength; i++) {
+            audioClipFiles.push(audioCliplocation + "/" + audioClipPrefix + i + "." + audioClipExt);
+        }
 
+        //Play Initial Audio Clip
+        var audioPlayer = new Audio(audioClipFiles[audioClipIndex + 1]);
+        audioPlayer.play();
+        audioClipIndex++;
+        
+        window.setInterval(function() {
+            audioPlayer = new Audio(audioClipFiles[(audioClipIndex % audioClipLength) + 1]);
+            audioPlayer.play();
+            audioClipIndex++;
+        }, audioClipIntervalTime * 1000);
+    }
+    
     //Return public functions
     return {
         init: init
