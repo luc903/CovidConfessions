@@ -11,7 +11,8 @@ include("includes/header.php");
 
 <div class="confessions-page__back-btn">
     <a href="/">
-     <span uk-icon="icon: arrow-left; ratio: 3"></span>
+     <span uk-icon="icon: arrow-left; ratio: 2"></span>
+     <p>Return to confess</p>
     </a>
 </div> 
 <div class="confessionsPage" id="confessionsPage">

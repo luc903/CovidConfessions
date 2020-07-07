@@ -134,7 +134,7 @@ mysqli_close($conn);
                     <a-text id="instructions__text" align="center" baseline="bottom" value="This scene is interactive" color="white" wrap-count="25" position="0 -1 -6" opacity="0" 
                     animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:6; dir:alternate;"
                     ></a-text>
-                    <a-text id="instructions__mouse" align="center" baseline="bottom" value="Use you mouse to explore!" color="white" wrap-count="25" position="0 -1.5 -6" opacity="0" 
+                    <a-text id="instructions__mouse" align="center" baseline="bottom" value="Use your mouse to explore!" color="white" wrap-count="25" position="0 -1.5 -6" opacity="0" 
                     animation__2="property: opacity; to: 0; dur: 3000; delay: 1000; easing: easeInOutBack; loop:6; dir:alternate;"
                     ></a-text>
                 </a-entity>
@@ -150,7 +150,8 @@ mysqli_close($conn);
                     <a-entity class="confession-item"  visible="false"
                               rotation="<?php echo $rotations[$i] ?>"
                               >
-                        <a-text align="center" value="Example: <?php echo $rows[$i]; ?>" color="#d630e9"
+                            <a-text align="center" value="I confess that...  <?php echo $rows[$i]; ?>" color="#FFF"
+
                                 geometry="primitive:plane; width: 5;" material="opacity: 0; colour: #000"
                                 baseline="center" position="<?php echo $position_start[$i] ?>"; wrap-count="35"
                                 animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;" 

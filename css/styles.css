@@ -107,6 +107,15 @@
   width: 100%;
   background-color: white !important;
 }
+.home-page__wrapper .uk-button-default:hover {
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  transition: background-color 500ms;
+  -webkit-box-shadow: 0px 0px 15px 0px #d630e9;
+  -moz-box-shadow: 0px 0px 15px 0px #d630e9;
+  box-shadow: 0px 0px 15px 0px #d630e9;
+  border: 1px solid #d630e9;
+}
 .home-page__confession-wrapper {
   display: flex;
   justify-content: space-between;
@@ -145,6 +154,7 @@
 #confession-form .character-count {
   width: 100%;
   color: white;
+  text-align: right;
 }
 #confession-form button {
   height: 2.4rem;
@@ -185,8 +195,22 @@ body, html {
   left: 0.5rem;
   color: white;
 }
-.confessions-page__back-btn .uk-icon {
-  color: white;
+.confessions-page__back-btn a {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #FFF;
+}
+.confessions-page__back-btn a p {
+  margin-top: 0.5em !important;
+}
+
+.confessions-page__back-btn a:hover {
+  color: #d630e9;
+  text-decoration: none;
+}
+.confessions-page__back-btn a:hover .uk-icon:hover {
+  color: #d630e9;
 }
 
 .confessions-page__wrapper {
@@ -211,14 +235,14 @@ body, html {
   justify-content: space-between;
   flex-direction: column;
   flex: 0 0 calc(33.33% - .8em);
-  border: 1px solid #ccc;
+  border: 1px solid #d630e9;
   padding: 1em;
   margin: 1em 0.2em;
   animation: neon 6s linear 0s infinite alternate;
   box-sizing: border-box;
   transition: filter 500ms;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
 }
 .confession:first-of-type {
   margin-left: 0;
