@@ -64,27 +64,6 @@ mysqli_close($conn);
               const start = document.querySelector('#start');
               var b = false
               this.el.addEventListener('click', () => {
-                  
-//                start.setAttribute('geometry', {
-//                        height: 0, 
-//                        width: 0
-//                });
-//
-//                  
-//                var videoEl = document.querySelector('#video');
-//                videoEl.play();
-//
-//                var el1 = document.querySelector('#textt');
-//                el1.setAttribute('visible', 'false');
-//                
-//                var cam1 = document.querySelector('#camera');
-//                cam1.setAttribute('animation', 'to: 0 360 0');
-//                
-//                var x = document.getElementById("audio_1"); 
-//                x.play(); 
-//               
-//                b = !b;
-//                console.log('Start');
               });
             }
           });
@@ -116,7 +95,7 @@ mysqli_close($conn);
                            webkit-playsinline="" src="video/room.mp4">
                        <source src="video/room.mp4" type="video/mp4">
                     </video>
-                    <img id="ACE" src="images/ACE.png">
+<!--                    <img id="ACE" src="images/ACE.png">-->
                 </a-assets>
                 <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
               

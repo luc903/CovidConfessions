@@ -18,12 +18,9 @@
     <meta property="og:title" content="Confessions">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="images/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="images/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="images/png" sizes="16x16" href="images/favicon-16x16.png">
     
     <link href="css/uikit.min.css" rel="stylesheet"/>
     <link href="css/styles.css" rel="stylesheet"/>
