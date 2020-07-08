@@ -96,7 +96,7 @@ var confession = function () {
         var audioClipLength = 6;
         var audioClipFiles = [];
         var audioClipIndex = 0;
-        var audioClipIntervalTime = 60; //In seconds
+        var audioClipIntervalTime = 30; //In seconds
         
         for(var i = 0; i <= audioClipLength; i++) {
             audioClipFiles.push(audioCliplocation + "/" + audioClipPrefix + i + "." + audioClipExt);
