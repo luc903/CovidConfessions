@@ -93,12 +93,12 @@ var confession = function () {
         var audioCliplocation = "/audio";
         var audioClipPrefix = "confession_";
         var audioClipExt = "mp3";
-        var audioClipLength = 6;
+        var audioClipLength = 23;
         var audioClipFiles = [];
-        var audioClipIndex = 0;
+        var audioClipIndex = 1;
         var audioClipIntervalTime = 30; //In seconds
         
-        for(var i = 0; i <= audioClipLength; i++) {
+        for(var i = 1; i <= audioClipLength; i++) {
             audioClipFiles.push(audioCliplocation + "/" + audioClipPrefix + i + "." + audioClipExt);
         }
 
@@ -110,7 +110,9 @@ var confession = function () {
         window.setInterval(function() {
             audioPlayer = new Audio(audioClipFiles[(audioClipIndex % audioClipLength) + 1]);
             audioPlayer.play();
-            audioClipIndex++;
+            //audioClipIndex++;
+            audioClipIndex = Math.floor(Math.random() * audioClipLength);
+            //console.log(audioClipIndex);
         }, audioClipIntervalTime * 1000);
     }
     

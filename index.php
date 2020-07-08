@@ -99,7 +99,7 @@ mysqli_close($conn);
                 <h1>Confessions</h1>
                 <div class="loading"></div>
                 <p></p>
-                <img src="images/ACE.jpg">
+<!--                <img src="images/ACE.png">-->
             </div>
 
 
@@ -116,6 +116,7 @@ mysqli_close($conn);
                            webkit-playsinline="" src="video/room.mp4">
                        <source src="video/room.mp4" type="video/mp4">
                     </video>
+                    <img id="ACE" src="images/ACE.png">
                 </a-assets>
                 <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
               
@@ -124,10 +125,12 @@ mysqli_close($conn);
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine;"></a-text>
                     
                     <a-text  align="center" value="Click Here To Begin" color="white" position="0 0 -5" opacity="0"
-                            id="start" geometry="primitive:plane; height: 2; width: 3;" material="opacity: 0" start
+                            id="start" material="opacity: 0" start
                             animation="property: position; to: 0 1 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;">
                     </a-text>
+                    
+<!--                    <a-image src="#ACE" position="0 -1 -5" width="2.8" height="1"></a-image>-->
                 </a-entity>
                 
                 <a-entity id="instructions">
