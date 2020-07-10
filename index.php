@@ -78,7 +78,7 @@ mysqli_close($conn);
                 <h1>Confessions</h1>
                 <div class="loading"></div>
                 <p></p>
-<!--                <img src="images/ACE.png">-->
+               <img src="images/ACE.png">
             </div>
 
 

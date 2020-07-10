@@ -1,10 +1,12 @@
 var twoSecondsPassed = false;
 
 window.setTimeout(function () {
-    twoSecondsPassed = true;
 }, 5000);
 
 $(function () {
+    window.setTimeout(function () {
+        $("#splash").fadeOut();
+    }, 5000);
 
     //Load page
 //     function LoadPage() {
@@ -151,6 +153,7 @@ $(function () {
                 document.getElementById('instructions').setAttribute('visible', 'true');
                 document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
                 document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
+                placeholder();
                 
                 placeholder();
 
