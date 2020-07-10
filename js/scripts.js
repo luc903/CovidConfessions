@@ -28,17 +28,13 @@ $(function () {
     //     LoadPage();
     // });
 
-
+    var looping = true;
     //Confession Form Page
     if ($("#confession-form").length > 0) {
         
-        
         var x = document.getElementById("myBtn");
-
         //Init character count
         $(".character-count").html(characterCount(""));
-        
-        
         //Form Submit
         $("#confession-form").on("submit", function (event) {
             event.preventDefault();
@@ -74,8 +70,8 @@ $(function () {
             $("#confession-form").fadeOut("slow");
 
             //Continue the video
-            document.getElementById("video")
-                .play();
+            console.log("Looping");
+            looping = false;
 
             //Fades out confessions for fly through.
             document.querySelectorAll(".confession-item")
@@ -138,7 +134,15 @@ $(function () {
         var pausing_function = function () {
             var video = document.getElementById("video");
             if (video.currentTime >= 12.9) {
-                video.pause();
+                //video.pause();
+                if (looping){
+                    looping = true;
+                    console.log("Looping");
+                    video.currentTime = 0;
+                    video.play();
+                }
+              
+                
                     //Does only the first line/center one
 //                document.querySelector(".confession-item")
 //                    .setAttribute('visible', 'true');
@@ -155,9 +159,7 @@ $(function () {
             
 
                 document.getElementById('vis').style.visibility = 'visible';
-                
                 document.getElementById('instructions').setAttribute('visible', 'true');
-                
                 document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
                 document.getElementById('instructions__mouse').setAttribute('animation__2', 'to: 1');
                 
@@ -177,21 +179,6 @@ $(function () {
                         window.location.href = "/confessions";
                     });
                 
-//                  var reloader = document.querySelector('#reload');
-//                        reloader.setAttribute('visible', 'true');
-//                    
-//                        reloader.setAttribute('geometry', {
-//                        height: 4, 
-//                        width: 1.5
-//                        });
-//
-//
-//                        //Add visible attribute to all confession text
-//                        document.querySelectorAll(".confession-item")
-//                            .forEach(function (el) {
-//                                el.setAttribute('visible', 'true');
-//                            });
-//                
                 this.removeEventListener("timeupdate", load_function);
             }
         };
