@@ -1,34 +1,7 @@
-var twoSecondsPassed = false;
-
-window.setTimeout(function () {
-}, 5000);
-
 $(function () {
     window.setTimeout(function () {
         $("#splash").fadeOut();
     }, 5000);
-
-    //Load page
-//     function LoadPage() {
-//         var scene = document.querySelector('a-scene');
-//         var splash = document.querySelector('#splash');
-//         var video = document.getElementById("video");
-//    
-//         if (twoSecondsPassed) {
-//             scene.addEventListener('loaded', function (e) {
-//                 document.getElementById('splash').fadeOut(1500);
-//                 video.play();
-//             });
-//         }
-//         else {
-//             window.setTimeout(function() {
-//                 LoadPage()
-//             }, 1000);
-//         }
-//     }
-//     document.addEventListener('DOMContentLoaded', function () {
-//         LoadPage();
-//     });
 
     var looping = true;
     //Confession Form Page
@@ -153,7 +126,6 @@ $(function () {
                 document.getElementById('instructions').setAttribute('visible', 'true');
                 document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
                 document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
-                placeholder();
                 
                 placeholder();
 
