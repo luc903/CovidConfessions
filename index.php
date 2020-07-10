@@ -117,7 +117,7 @@ mysqli_close($conn);
                     animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:6; dir:alternate;"
                     ></a-text>
                     <a-text id="instructions__mouse" align="center" baseline="bottom" value="Use your mouse to explore!" color="white" wrap-count="25" position="0 -1.5 -6" opacity="0" 
-                    animation__2="property: opacity; to: 0; dur: 3000; delay: 1000; easing: easeInOutBack; loop:6; dir:alternate;"
+                    animation="property: opacity; to: 0; dur: 3000; delay: 1000; easing: easeInOutBack; loop:6; dir:alternate;"
                     ></a-text>
                 </a-entity>
                 

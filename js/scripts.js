@@ -7,26 +7,26 @@ window.setTimeout(function () {
 $(function () {
 
     //Load page
-    // function LoadPage() {
-    //     var scene = document.querySelector('a-scene');
-    //     var splash = document.querySelector('#splash');
-    //     var video = document.getElementById("video");
-    //
-    //     if (twoSecondsPassed) {
-    //         scene.addEventListener('loaded', function (e) {
-    //             document.getElementById('splash').fadeOut(1500);
-    //             video.play();
-    //         });
-    //     }
-    //     else {
-    //         window.setTimeout(function() {
-    //             LoadPage()
-    //         }, 1000);
-    //     }
-    // }
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     LoadPage();
-    // });
+//     function LoadPage() {
+//         var scene = document.querySelector('a-scene');
+//         var splash = document.querySelector('#splash');
+//         var video = document.getElementById("video");
+//    
+//         if (twoSecondsPassed) {
+//             scene.addEventListener('loaded', function (e) {
+//                 document.getElementById('splash').fadeOut(1500);
+//                 video.play();
+//             });
+//         }
+//         else {
+//             window.setTimeout(function() {
+//                 LoadPage()
+//             }, 1000);
+//         }
+//     }
+//     document.addEventListener('DOMContentLoaded', function () {
+//         LoadPage();
+//     });
 
     var looping = true;
     //Confession Form Page
@@ -72,6 +72,7 @@ $(function () {
             //Continue the video
             console.log("Looping");
             looping = false;
+            //this.removeEventListener("timeupdate", pausing_function);
 
             //Fades out confessions for fly through.
             document.querySelectorAll(".confession-item")
@@ -141,11 +142,6 @@ $(function () {
                     video.currentTime = 0;
                     video.play();
                 }
-              
-                
-                    //Does only the first line/center one
-//                document.querySelector(".confession-item")
-//                    .setAttribute('visible', 'true');
                 
                 //Shows confessions and animates in
                 document.querySelectorAll(".confession-item") 
@@ -161,11 +157,28 @@ $(function () {
                 document.getElementById('vis').style.visibility = 'visible';
                 document.getElementById('instructions').setAttribute('visible', 'true');
                 document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
-                document.getElementById('instructions__mouse').setAttribute('animation__2', 'to: 1');
+                document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
                 
-                placeholder();
+               if (looping==false){
+                    console.log("Wahoo");
+        
+                    document.querySelectorAll(".confession-item") 
+                    .forEach(function (el) {      
+                    //el.setAttribute('visible', 'false');
+                    var insideEl = el.querySelector('a-text')
+                    insideEl.setAttribute('animation__2', 'to: 0');
+                
+                    });
+                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
+                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
+                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
+                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
+                    
+                   this.removeEventListener("timeupdate", pausing_function);
+                }
 
-                this.removeEventListener("timeupdate", pausing_function);
+                placeholder();
+                
             }
         };
         video.addEventListener("timeupdate", pausing_function);
