@@ -135,13 +135,6 @@ $(function () {
         var pausing_function = function () {
             var video = document.getElementById("video");
             if (video.currentTime >= 12.9) {
-                //video.pause();
-                if (looping){
-                    looping = true;
-                    console.log("Looping");
-                    video.currentTime = 0;
-                    video.play();
-                }
                 
                 //Shows confessions and animates in
                 document.querySelectorAll(".confession-item") 
@@ -153,33 +146,17 @@ $(function () {
                 
                 });
             
-
                 document.getElementById('vis').style.visibility = 'visible';
+                
                 document.getElementById('instructions').setAttribute('visible', 'true');
                 document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
                 document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
                 
-               if (looping==false){
-                    console.log("Wahoo");
-        
-                    document.querySelectorAll(".confession-item") 
-                    .forEach(function (el) {      
-                    //el.setAttribute('visible', 'false');
-                    var insideEl = el.querySelector('a-text')
-                    insideEl.setAttribute('animation__2', 'to: 0');
-                
-                    });
-                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
-                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
-                    
-                   this.removeEventListener("timeupdate", pausing_function);
-                }
-
                 placeholder();
-                
+
+                this.removeEventListener("timeupdate", pausing_function);
             }
+              
         };
         video.addEventListener("timeupdate", pausing_function);
         
@@ -200,10 +177,29 @@ $(function () {
         //Video end loop
         var loop_function = function () {
             var video = document.getElementById("video");
-            if (video.currentTime >= 60) {
-                console.log("Looping");
-                video.currentTime = 45;
-                video.play();
+            if (video.currentTime >= 12.9) {
+                if (looping){
+                    console.log("Looping");
+                    video.currentTime = 0;
+                    video.play();
+                }
+                
+                if (looping==false){
+                    console.log("Wahoo");
+        
+                    document.querySelectorAll(".confession-item") 
+                    .forEach(function (el) {      
+                    //el.setAttribute('visible', 'false');
+                    var insideEl = el.querySelector('a-text')
+                    insideEl.setAttribute('animation__2', 'to: 0');
+                
+                    });
+                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
+                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
+                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
+                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
+                    
+                }
             }
         };
         video.addEventListener("timeupdate", loop_function);
