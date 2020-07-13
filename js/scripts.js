@@ -1,6 +1,8 @@
 $(function () {
     window.setTimeout(function () {
-        $("#splash").fadeOut();
+        //$("#splash").fadeOut();
+        $(".loading").fadeOut();
+        $("#instructions").fadeIn("slow");
     }, 5000);
 
     var looping = true;
@@ -28,7 +30,6 @@ $(function () {
                     } else {
                         console.log(jsonResponse.message);
                     }
-
                 },
                 error: function (error) {
                     console.error(error);
@@ -48,18 +49,8 @@ $(function () {
             //Continue the video
             console.log("Looping");
             looping = false;
-            //this.removeEventListener("timeupdate", pausing_function);
-
-            //Fades out confessions for fly through.
-//            document.querySelectorAll(".confession-item")
-//                .forEach(function (el) {
-//                    var insideEl = el.querySelector('a-text')
-//                    insideEl.setAttribute('animation__2', 'to: 0');
-//
-//                });
-//            document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-//            document.getElementById('instructions__mouse').setAttribute('animation', 'to: 0');
-             document.getElementById('instructions__wait').setAttribute('animation', 'to: 1');
+    
+            document.getElementById('instructions__wait').setAttribute('animation', 'to: 1');
              
         }
 
@@ -77,7 +68,6 @@ $(function () {
                 $(".character-count").html(characterCount(event.target.value));
             });
 
-    
                     //Focusing on text box
         $(".confession__input").on("focus", function () {
             $(".home-page").addClass("focus");
@@ -86,6 +76,7 @@ $(function () {
         var isLoaded = false;
         document.addEventListener("click", function () {
             if (isLoaded == false) {
+                $("#splash").fadeOut(1000);
             
                 var videoEl = document.querySelector('#video');
                 videoEl.play();
@@ -107,16 +98,6 @@ $(function () {
             var video = document.getElementById("video");
             if (video.currentTime >= 38) {
                 
-                //Shows confessions and animates in
-//                document.querySelectorAll(".confession-item") 
-//                    .forEach(function (el) {
-//                    el.setAttribute('visible', 'true');
-//                    
-//                    var insideEl = el.querySelector('a-text')
-//                    insideEl.setAttribute('animation__2', 'to: 1');
-//                
-//                });
-            
                 document.getElementById('vis').style.visibility = 'visible';
                 
                 document.getElementById('instructions').setAttribute('visible', 'true');
@@ -165,10 +146,6 @@ $(function () {
                     insideEl.setAttribute('animation__2', 'to: 0');
                 
                     });
-//                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-//                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
-//                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-//                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
                     
                 }
             }

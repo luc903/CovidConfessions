@@ -103,6 +103,11 @@ h1{
     letter-spacing: 0.05em;
     margin-top: 1em;
     color: white;
+    
+    @media only screen and (max-width: 768px) {
+        margin-top: 2.5em;
+    }
+
 }
 
 .confessions-page__confession-wrapper {
@@ -167,8 +172,12 @@ h1{
   }
   
   //Drop to 2 per row on mobile
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 960px) {
     flex: 0 0 calc(50% - .8em);
+  }
+    
+  @media only screen and (max-width: 640px) {
+    flex: 0 0 calc(100% - .8em);
   }
   
 }

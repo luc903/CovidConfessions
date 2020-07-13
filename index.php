@@ -7,45 +7,40 @@
  */
 include("includes/header.php");
 require_once("config.php");
-
-$query = "SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 5";
-$result = $conn->query($query);
-
-while ($row = $result->fetch_row()) {
-    $rows[] = $row[0];
-}
-
-$randomConfession_1 = $conn->query("SELECT text FROM confessions WHERE isSafe='1' ORDER BY RAND() LIMIT 5")->fetch_object()->text;
-
-
-mysqli_close($conn);
-
 ?>
     <div class="home-page">
-
         <div class="home-page__wrapper">
             <div id="splash">
-                <h1>Confessions</h1>
+                <h1>Welcome To Confessions</h1>
+                
                 <div class="loading"></div>
-                <p></p>
+                
+                <div id="instructions">
+<!--                    <h2 class="begin">Click to begin</h2>-->
+                    <ul>
+                        <li><p><strong>Click to begin</strong> – sit back and watch!</p></li>
+                        <li><p>You can use your mouse to explore – it’s 360</p></li>
+                        <li><p><strong>Enter your confession</strong> in the Confession Box to continue</p></li>
+                        <li><p>Or click <strong>I’ll come back</strong> to journey straight to The Confession Gallery</p></li>
+                        <li><p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p></li>            
+                    </ul>
+                </div>
                <img src="images/ACE.png">
             </div>
 
-
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
                      background="color: #FAFAFA" cursor-listener>
-                
 
                 <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; to:0 180 0; dur: 39000; delay: 2000; easing: easeInOutSine;"> 
                 </a-camera>
 
-
                 <a-assets>
-                     <video id="video" loop="false" crossorigin="anonymous" playsinline=""
+                     <video id="video" loop="false" preload="true" crossorigin="anonymous" playsinline=""
                            webkit-playsinline="" src="video/video.mp4">
                        <source src="video/video.mp4" type="video/mp4">
                     </video>
                 </a-assets>
+                
                 <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
               
                 <a-entity id="textt">
@@ -57,16 +52,13 @@ mysqli_close($conn);
                             animation="property: position; to: 0 1 -3; dur: 3000; easing: easeInSine; loop: true; dir:alternate;"
                             animation__2="property: opacity; to: 1; dur: 3000; easing: easeInSine; loop: true; dir:alternate;">
                     </a-text>
-                    
-<!--                    <a-image src="#ACE" position="0 -1 -5" width="2.8" height="1"></a-image>-->
                 </a-entity>
                 
                 
                 
                 <a-entity id="instructions">
                     
-                    <a-text id="instructions__watch"align="center" value="Sit back and watch!" color="white" position="0 0 -3" opacity="0"
-                            id="start" material="opacity: 0"
+                    <a-text id="instructions__watch"align="center" value="Sit back and watch!" color="white" position="0 0 -3" opacity="0" id="start" material="opacity: 0"
                             animation="property: opacity; to: 0; dur: 3000; easing: easeInSine; loop: 2; dir:alternate;">
                     </a-text>
                     
@@ -81,31 +73,7 @@ mysqli_close($conn);
                     animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:2; dir:alternate;"
                     ></a-text>
                 </a-entity>
-                
-                
-                
-<!--
-
-                <?php $rotations = ["0 0 0", "0 72 0", "0 144 0", "0 216 0", "0 288 0"] ?>
-                <?php $position_start = ["0 4 -5", "0 2 -5", "0 3 -5", "0 1 -5", "0 3 -5"] ?>
-                <?php $position_movement = ["0 4 -5", "0 0 -5", "0 1 -5", "0 0 -5", "0 1 -5"] ?>
-                <?php for ($i = 0; $i < Count($rows); $i++): ?>
-                
-                    <a-entity class="confession-item"  visible="false"
-                              rotation="<?php echo $rotations[$i] ?>"
-                              >
-                            <a-text align="center" value="I confess that...  <?php echo $rows[$i]; ?>" color="#FFF"
-
-                                geometry="primitive:plane; width: 5;" material="opacity: 0; colour: #000"
-                                baseline="center" position="<?php echo $position_start[$i] ?>"; wrap-count="35"
-                                animation="property: position; to: <?php echo $position_movement[$i] ?>; dur: 20000; easing: easeInSine; loop: true; dir:alternate;" 
-                                opacity= "0" 
-                                animation__2="property: opacity; to:0; dur: 5000; easing: easeInSine;">
-                        
-                        </a-text>
-                    </a-entity>
-                <?php endfor; ?>
--->
+        
             </a-scene>
 
             <div id="vis" style="visibility: hidden">

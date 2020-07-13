@@ -7,6 +7,7 @@
 }
 
 body {
+  color: white;
   min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
@@ -45,33 +46,27 @@ body {
   animation: spin 1s infinite linear;
 }
 
+#instructions {
+  display: none;
+  font-family: "Poppins", sans-serif;
+  color: #f4f4f4;
+}
+
+#splash h2 {
+  text-align: center;
+}
+
 #splash h1 {
   width: 100%;
   color: white;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", sans-serif;
   left: 0;
   text-transform: uppercase;
   text-align: center;
   opacity: 100;
   margin: 0 0 1em;
-  animation: in 3s ease-out forwards;
-  animation-delay: 2s;
 }
 
-@keyframes in {
-  0% {
-    letter-spacing: 0px;
-    opacity: 1;
-  }
-  30% {
-    letter-spacing: 0.5em;
-    opacity: 0;
-  }
-  100% {
-    letter-spacing: 2em;
-    opacity: 0;
-  }
-}
 #splash img {
   width: 30vh;
   height: auto;
@@ -262,6 +257,11 @@ h1 {
   margin-top: 1em;
   color: white;
 }
+@media only screen and (max-width: 768px) {
+  h1 {
+    margin-top: 2.5em;
+  }
+}
 
 .confessions-page__confession-wrapper {
   display: flex;
@@ -316,9 +316,14 @@ h1 {
   align-items: center;
   margin-left: auto;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
   .confession {
     flex: 0 0 calc(50% - .8em);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .confession {
+    flex: 0 0 calc(100% - .8em);
   }
 }
 

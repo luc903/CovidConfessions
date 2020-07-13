@@ -18,7 +18,7 @@ include("includes/header.php");
     </a>
 </div> 
 <div class="confessions-page__info">
-    <a href="http://www.audacious.org.uk">
+    <a href="https://audacious.org.uk/confessions/">
          <span uk-icon="icon: info; ratio: 2"></span>
          <p>Find Out More</p>
     </a>
