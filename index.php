@@ -21,8 +21,6 @@ $randomConfession_1 = $conn->query("SELECT text FROM confessions WHERE isSafe='1
 mysqli_close($conn);
 
 ?>
-    <audio id="audio_1" src="../audio/confessions_intro_1.mp3"></audio>
-
     <div class="home-page">
 
         <div class="home-page__wrapper">
@@ -38,7 +36,7 @@ mysqli_close($conn);
                      background="color: #FAFAFA" cursor-listener>
                 
 
-                <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; to:0 180 0; dur: 39000; easing: easeOutSine;"> 
+                <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; to:0 180 0; dur: 39000; delay: 2000; easing: easeInOutSine;"> 
                 </a-camera>
 
 
@@ -63,21 +61,30 @@ mysqli_close($conn);
 <!--                    <a-image src="#ACE" position="0 -1 -5" width="2.8" height="1"></a-image>-->
                 </a-entity>
                 
+                
+                
                 <a-entity id="instructions">
+                    
+                    <a-text id="instructions__watch"align="center" value="Sit back and watch!" color="white" position="0 0 -3" opacity="0"
+                            id="start" material="opacity: 0"
+                            animation="property: opacity; to: 0; dur: 3000; easing: easeInSine; loop: 2; dir:alternate;">
+                    </a-text>
+                    
                     <a-text id="instructions__text" align="center" baseline="bottom" value="This scene is interactive" color="white" wrap-count="25" position="0 -1 -6" opacity="0" 
-                    animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:4; dir:alternate;"
+                    animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:true; dir:alternate;"
                     ></a-text>
                     <a-text id="instructions__mouse" align="center" baseline="bottom" value="Use your mouse to explore!" color="white" wrap-count="25" position="0 -1.5 -6" opacity="0" 
-                    animation="property: opacity; to: 0; dur: 3000; delay: 1000; easing: easeInOutBack; loop:4; dir:alternate;"
+                    animation="property: opacity; to: 0; dur: 3000; delay: 1000; easing: easeInOutBack; loop:true; dir:alternate;"
                     ></a-text>
                     
-                    <a-text id="instructions__wait" align="center" baseline="bottom" value="Thank For Your Confession" color="white" wrap-count="25" position="0 0 -6" opacity="0" 
-                    animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:4; dir:alternate;"
+                    <a-text id="instructions__wait" align="center" baseline="bottom" value="Thank For Your Confession" color="white" wrap-count="25" position="0 1 -6" opacity="0" 
+                    animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:2; dir:alternate;"
                     ></a-text>
                 </a-entity>
                 
                 
                 
+<!--
 
                 <?php $rotations = ["0 0 0", "0 72 0", "0 144 0", "0 216 0", "0 288 0"] ?>
                 <?php $position_start = ["0 4 -5", "0 2 -5", "0 3 -5", "0 1 -5", "0 3 -5"] ?>
@@ -98,6 +105,7 @@ mysqli_close($conn);
                         </a-text>
                     </a-entity>
                 <?php endfor; ?>
+-->
             </a-scene>
 
             <div id="vis" style="visibility: hidden">

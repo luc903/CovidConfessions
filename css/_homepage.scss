@@ -1,4 +1,12 @@
 
+
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+//  font-family: 'Bebas Neue', cursive;
+//  letter-spacing: 0.0425em;
+}
 /*  splash screen*/
 #splash {
   position: absolute;
@@ -39,7 +47,7 @@
 
   width: 100%;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bebas Neue', cursive;
   left: 0;
   text-transform: uppercase;
   text-align: center;
@@ -138,6 +146,7 @@
 
 #confession-form {
   $inputHeight: 2.4rem;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

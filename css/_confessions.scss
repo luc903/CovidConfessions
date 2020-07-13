@@ -1,5 +1,7 @@
 body, html {
   background: #000;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.0425em;
 }
 
 .confessionsPage {
@@ -11,7 +13,7 @@ body, html {
   color: #fff;
   font-family: 'Poppins', sans-serif;
   margin-bottom: 10rem;
-  
+    
   
 }
 
@@ -92,6 +94,15 @@ body, html {
 .confessions-page__wrapper {
   max-width: 80vw;
   min-width: 40vw;
+    
+}
+
+h1{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.05em;
+    margin-top: 1em;
+    color: white;
 }
 
 .confessions-page__confession-wrapper {

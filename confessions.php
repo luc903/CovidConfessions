@@ -25,6 +25,7 @@ include("includes/header.php");
 </div>
 <div class="confessionsPage" id="confessionsPage">
     <div class="confessions-page__wrapper">
+        <h1>Confessions Gallery</h1>
         <div class="confessions-page__confession-wrapper">
 
         </div>

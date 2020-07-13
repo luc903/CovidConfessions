@@ -39,6 +39,7 @@ $(function () {
         //Skip confession
         $("#skip").on("click", function() {
             proceedToConfessions();
+            document.getElementById('instructions__wait').setAttribute('value', 'Enjoy The Confessions Gallery');
         })
 
         function proceedToConfessions() {
@@ -50,16 +51,16 @@ $(function () {
             //this.removeEventListener("timeupdate", pausing_function);
 
             //Fades out confessions for fly through.
-            document.querySelectorAll(".confession-item")
-                .forEach(function (el) {
-                    var insideEl = el.querySelector('a-text')
-                    insideEl.setAttribute('animation__2', 'to: 0');
-
-                });
-            
-            document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-            document.getElementById('instructions__mouse').setAttribute('animation', 'to: 0');
-            document.getElementById('instructions__wait').setAttribute('animation', 'to: 1');
+//            document.querySelectorAll(".confession-item")
+//                .forEach(function (el) {
+//                    var insideEl = el.querySelector('a-text')
+//                    insideEl.setAttribute('animation__2', 'to: 0');
+//
+//                });
+//            document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
+//            document.getElementById('instructions__mouse').setAttribute('animation', 'to: 0');
+             document.getElementById('instructions__wait').setAttribute('animation', 'to: 1');
+             
         }
 
         //Character limit
@@ -86,11 +87,6 @@ $(function () {
         document.addEventListener("click", function () {
             if (isLoaded == false) {
             
-//                start.setAttribute('geometry', {
-//                        height: 0, 
-//                        width: 0
-//                });
-                  
                 var videoEl = document.querySelector('#video');
                 videoEl.play();
 
@@ -100,9 +96,8 @@ $(function () {
                 var cam1 = document.querySelector('#camera');
                 cam1.setAttribute('animation', 'to: 0 360 0');
                 
-                var x = document.getElementById("audio_1"); 
-                x.play(); 
-                  
+                document.getElementById('instructions__watch').setAttribute('animation', 'to: 1');
+           
                 isLoaded = true;
             }
         })
@@ -110,17 +105,17 @@ $(function () {
      //Video Time to pause
         var pausing_function = function () {
             var video = document.getElementById("video");
-            if (video.currentTime >= 25) {
+            if (video.currentTime >= 38) {
                 
                 //Shows confessions and animates in
-                document.querySelectorAll(".confession-item") 
-                    .forEach(function (el) {
-                    el.setAttribute('visible', 'true');
-                    
-                    var insideEl = el.querySelector('a-text')
-                    insideEl.setAttribute('animation__2', 'to: 1');
-                
-                });
+//                document.querySelectorAll(".confession-item") 
+//                    .forEach(function (el) {
+//                    el.setAttribute('visible', 'true');
+//                    
+//                    var insideEl = el.querySelector('a-text')
+//                    insideEl.setAttribute('animation__2', 'to: 1');
+//                
+//                });
             
                 document.getElementById('vis').style.visibility = 'visible';
                 
@@ -170,10 +165,10 @@ $(function () {
                     insideEl.setAttribute('animation__2', 'to: 0');
                 
                     });
-                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
-                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
+//                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
+//                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
+//                    document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
+//                    document.getElementById('instructions__mouse').setAttribute('visible', 'false');
                     
                 }
             }
@@ -257,10 +252,5 @@ function textAreaAdjust(o) {
     o.style.height = "1px";
     o.style.height = (o.scrollHeight)+"px";
   }
-
-function play_1() {
-    var audio = document.getElementById("audio_1");
-    audio.play();
-}
 
 
