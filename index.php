@@ -16,22 +16,26 @@ require_once("config.php");
                 <div class="loading"></div>
                 
                 <div id="instructions">
-<!--                    <h2 class="begin">Click to begin</h2>-->
-                    <ul>
-                        <li><p><strong>Click to begin</strong> – sit back and watch!</p></li>
-                        <li><p>You can use your mouse to explore – it’s 360</p></li>
-                        <li><p><strong>Enter your confession</strong> in the Confession Box to continue</p></li>
-                        <li><p>Or click <strong>I’ll come back</strong> to journey straight to The Confession Gallery</p></li>
-                        <li><p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p></li>            
-                    </ul>
+                    <div class="instructions__wrapper">
+                        <ul>
+                            <li><p><strong>Click to begin</strong> – sit back and watch!</p></li>
+                            <li><p>You can use your mouse to explore – it’s 360</p></li>
+                            <li><p><strong>Enter your confession</strong> in the Confession Box to continue, it will be added to the gallery</p></li>
+                            <li><p>Or click <strong>I’ll come back</strong> to journey straight to The Confession Gallery</p></li>
+                            <li><p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p></li>            
+                        </ul>
+
+                        <button id="begin" type="button" class="uk-button uk-button-default" >Click Here to Begin</button>
+                    </div>
                 </div>
+                
                <img src="images/ACE.png">
             </div>
 
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
                      background="color: #FAFAFA" cursor-listener>
 
-                <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; to:0 180 0; dur: 39000; delay: 2000; easing: easeInOutSine;"> 
+                <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; from:0 0 0; to:0 180 0; dur: 39000; delay: 2000; easing: easeInOutSine;"> 
                 </a-camera>
 
                 <a-assets>

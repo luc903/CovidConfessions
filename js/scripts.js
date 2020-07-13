@@ -42,6 +42,26 @@ $(function () {
             proceedToConfessions();
             document.getElementById('instructions__wait').setAttribute('value', 'Enjoy The Confessions Gallery');
         })
+        
+        $("#begin").on("click", function() {
+             if (isLoaded == false) {
+                $("#splash").fadeOut(1000);
+            
+                var videoEl = document.querySelector('#video');
+                videoEl.play();
+
+                var el1 = document.querySelector('#textt');
+                el1.setAttribute('visible', 'false');
+                
+                var cam1 = document.querySelector('#camera');
+                cam1.setAttribute('animation', 'to: 0 360 0');
+                
+                document.getElementById('instructions__watch').setAttribute('animation', 'to: 1');
+           
+                isLoaded = true;
+            }
+        })
+
 
         function proceedToConfessions() {
             $("#confession-form").fadeOut("slow");
@@ -75,22 +95,7 @@ $(function () {
 
         var isLoaded = false;
         document.addEventListener("click", function () {
-            if (isLoaded == false) {
-                $("#splash").fadeOut(1000);
-            
-                var videoEl = document.querySelector('#video');
-                videoEl.play();
-
-                var el1 = document.querySelector('#textt');
-                el1.setAttribute('visible', 'false');
-                
-                var cam1 = document.querySelector('#camera');
-                cam1.setAttribute('animation', 'to: 0 360 0');
-                
-                document.getElementById('instructions__watch').setAttribute('animation', 'to: 1');
            
-                isLoaded = true;
-            }
         })
         
      //Video Time to pause

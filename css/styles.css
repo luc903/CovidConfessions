@@ -7,7 +7,6 @@
 }
 
 body {
-  color: white;
   min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
@@ -48,12 +47,26 @@ body {
 
 #instructions {
   display: none;
+}
+
+.instructions__wrapper {
   font-family: "Poppins", sans-serif;
   color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 #splash h2 {
   text-align: center;
+}
+
+#begin {
+  max-width: 50%;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  color: white;
 }
 
 #splash h1 {
