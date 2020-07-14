@@ -69,25 +69,9 @@ $(function () {
             //Continue the video
             console.log("Looping");
             looping = false;
-<<<<<<< HEAD
     
             document.getElementById('instructions__wait').setAttribute('animation', 'to: 1');
              
-=======
-            //this.removeEventListener("timeupdate", pausing_function);
-
-            //Fades out confessions for fly through.
-            document.querySelectorAll(".confession-item")
-                .forEach(function (el) {
-                    var insideEl = el.querySelector('a-text')
-                    insideEl.setAttribute('animation__2', 'to: 0');
-
-                });
-            
-            document.getElementById('instructions__text').setAttribute('animation', 'to: 0');
-            document.getElementById('instructions__mouse').setAttribute('animation', 'to: 0');
-            document.getElementById('instructions__wait').setAttribute('animation', 'to: 1');
->>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
         }
 
         //Character limit
@@ -111,49 +95,13 @@ $(function () {
 
         var isLoaded = false;
         document.addEventListener("click", function () {
-<<<<<<< HEAD
            
-=======
-            if (isLoaded == false) {
-            
-//                start.setAttribute('geometry', {
-//                        height: 0, 
-//                        width: 0
-//                });
-                  
-                var videoEl = document.querySelector('#video');
-                videoEl.play();
-
-                var el1 = document.querySelector('#textt');
-                el1.setAttribute('visible', 'false');
-                
-                var cam1 = document.querySelector('#camera');
-                cam1.setAttribute('animation', 'to: 0 360 0');
-                
-                var x = document.getElementById("audio_1"); 
-                x.play(); 
-                  
-                isLoaded = true;
-            }
->>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
         })
         
      //Video Time to pause
         var pausing_function = function () {
             var video = document.getElementById("video");
-<<<<<<< HEAD
             if (video.currentTime >= 38) {
-=======
-            if (video.currentTime >= 25) {
-                
-                //Shows confessions and animates in
-                document.querySelectorAll(".confession-item") 
-                    .forEach(function (el) {
-                    el.setAttribute('visible', 'true');
-                    
-                    var insideEl = el.querySelector('a-text')
-                    insideEl.setAttribute('animation__2', 'to: 1');
->>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
                 
                 document.getElementById('vis').style.visibility = 'visible';
                 
