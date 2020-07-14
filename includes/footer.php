@@ -10,7 +10,7 @@
 <!-- Confession Template -->
 <script id="confession-template" type="x-handlebars-template">
 
-<div class="confession" style="display: none">
+<div class="confession" style="display: none" onmouseover="mouseOver()">
     <p>I confess that...</p>
     <div class="confession__body">
         <span uk-icon="icon: quote-right"></span>

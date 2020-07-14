@@ -3,6 +3,8 @@ var confessions;
 var i = 0;
 var limitReached = false;
 
+var start = false;
+
 //Lopped audio configuration
 //var _initAudioLoop = function() {
 //        var audioCliplocation = "/audio";
@@ -33,6 +35,7 @@ var limitReached = false;
 
 var confession = function () {
     //Initiate Confessions Page
+    
     var init = function () {
         confessions = _getConfessions();
         _loadConfessions(9);
@@ -41,6 +44,13 @@ var confession = function () {
         window.onscroll = function (ev) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
                 _loadConfessions(6);
+                
+            }
+            if(!start){
+                console.log("Confessions");        
+                var x = document.getElementById("audio_2"); 
+                x.play(); 
+                start = true;
             }
         };
     }
@@ -114,23 +124,31 @@ var confession = function () {
     }
 }();
 
-
-var start = false;
+var mouseOver = function() {
+  if(!start){
+            console.log("Confessions");        
+            var x = document.getElementById("audio_2"); 
+            x.play(); 
+             start = true;
+     }
+}
+   
 //On Load
 $(function () {
     if($("#confessionsPage").length > 0) {
         confession.init();
-    }
+        document.getElementsByClass("confession").addEventListener("mouseover", mouseOver);
+}
     
     document.addEventListener("click", function () {
          if(!start){
             console.log("Confessions");        
             var x = document.getElementById("audio_2"); 
             x.play(); 
-//
 //            _initAudioLoop();
              start = true;
          }
     })
+
      
 })
