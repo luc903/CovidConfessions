@@ -79,6 +79,7 @@ body {
 //  animation-delay: 2s;
 }
 
+<<<<<<< HEAD
 //@keyframes in{
 //  0%{
 //    letter-spacing: 0px;
@@ -93,6 +94,22 @@ body {
 //    opacity: 0;
 //  }
 //}
+=======
+@keyframes in{
+  0%{
+    letter-spacing: 0px;
+    opacity: 1;
+  }
+  30%{
+    letter-spacing: 0.5em;
+    opacity: 0;
+  }
+  100%{
+    letter-spacing: 2em;
+    opacity: 0;
+  }
+}
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
 #splash img {
   width: 30vh;
   height: auto;

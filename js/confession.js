@@ -3,6 +3,7 @@ var confessions;
 var i = 0;
 var limitReached = false;
 
+<<<<<<< HEAD
 var start = false;
 
 //Lopped audio configuration
@@ -32,6 +33,35 @@ var start = false;
 //            //console.log(audioClipIndex);
 //        }, audioClipIntervalTime * 1000);
 //}
+=======
+   //Lopped audio configuration
+var _initAudioLoop = function() {
+        var audioCliplocation = "/audio";
+        var audioClipPrefix = "confession_";
+        var audioClipExt = "mp3";
+        var audioClipLength = 27;
+        var audioClipFiles = [];
+        var audioClipIndex = 1
+        var audioClipIntervalTime = 20; //In seconds
+        
+        for(var i = 1; i <= audioClipLength; i++) {
+            audioClipFiles.push(audioCliplocation + "/" + audioClipPrefix + i + "." + audioClipExt);
+        }
+        
+        //Play Initial Audio Clip
+        var audioPlayer = new Audio(audioClipFiles[audioClipIndex + 1]);
+        audioPlayer.play();
+        audioClipIndex++;
+        
+        window.setInterval(function() {
+            audioPlayer = new Audio(audioClipFiles[(audioClipIndex % audioClipLength) + 1]);
+            audioPlayer.play();
+            audioClipIndex++;
+            //audioClipIndex = Math.floor(Math.random() * audioClipLength);
+            //console.log(audioClipIndex);
+        }, audioClipIntervalTime * 1000);
+}
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
 
 var confession = function () {
     //Initiate Confessions Page
@@ -123,6 +153,7 @@ var confession = function () {
         init: init
     }
 }();
+<<<<<<< HEAD
 
 var mouseOver = function() {
   if(!start){
@@ -133,22 +164,37 @@ var mouseOver = function() {
      }
 }
    
+=======
+var start = false;
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
 //On Load
 $(function () {
     if($("#confessionsPage").length > 0) {
         confession.init();
+<<<<<<< HEAD
         document.getElementsByClass("confession").addEventListener("mouseover", mouseOver);
 }
+=======
+    }
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
     
     document.addEventListener("click", function () {
          if(!start){
             console.log("Confessions");        
             var x = document.getElementById("audio_2"); 
             x.play(); 
+<<<<<<< HEAD
 //            _initAudioLoop();
              start = true;
          }
     })
 
+=======
+
+            _initAudioLoop();
+             start = true;
+         }
+    })
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
      
 })

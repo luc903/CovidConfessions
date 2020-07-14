@@ -8,6 +8,11 @@
 include("includes/header.php");
 require_once("config.php");
 ?>
+<<<<<<< HEAD
+=======
+    <audio id="audio_1" src="../audio/confessions_intro_1.mp3"></audio>
+
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
     <div class="home-page">
         <div class="home-page__wrapper">
             <div id="splash">
@@ -35,11 +40,19 @@ require_once("config.php");
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
                      background="color: #FAFAFA" cursor-listener>
 
+<<<<<<< HEAD
                 <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; from:0 0 0; to:0 180 0; dur: 39000; delay: 2000; easing: easeInOutSine;"> 
+=======
+                <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; to:0 180 0; dur: 39000; easing: easeOutSine;"> 
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
                 </a-camera>
 
                 <a-assets>
+<<<<<<< HEAD
                      <video id="video" loop="false" preload="true" crossorigin="anonymous" playsinline=""
+=======
+                     <video id="video" loop="false" crossorigin="anonymous" playsinline=""
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
                            webkit-playsinline="" src="video/video.mp4">
                        <source src="video/video.mp4" type="video/mp4">
                     </video>
@@ -67,6 +80,7 @@ require_once("config.php");
                     </a-text>
                     
                     <a-text id="instructions__text" align="center" baseline="bottom" value="This scene is interactive" color="white" wrap-count="25" position="0 -1 -6" opacity="0" 
+<<<<<<< HEAD
                     animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:true; dir:alternate;"
                     ></a-text>
                     <a-text id="instructions__mouse" align="center" baseline="bottom" value="Use your mouse to explore!" color="white" wrap-count="25" position="0 -1.5 -6" opacity="0" 
@@ -75,6 +89,16 @@ require_once("config.php");
                     
                     <a-text id="instructions__wait" align="center" baseline="bottom" value="Thank For Your Confession" color="white" wrap-count="25" position="0 1 -6" opacity="0" 
                     animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:2; dir:alternate;"
+=======
+                    animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:4; dir:alternate;"
+                    ></a-text>
+                    <a-text id="instructions__mouse" align="center" baseline="bottom" value="Use your mouse to explore!" color="white" wrap-count="25" position="0 -1.5 -6" opacity="0" 
+                    animation="property: opacity; to: 0; dur: 3000; delay: 1000; easing: easeInOutBack; loop:4; dir:alternate;"
+                    ></a-text>
+                    
+                    <a-text id="instructions__wait" align="center" baseline="bottom" value="Thank For Your Confession" color="white" wrap-count="25" position="0 0 -6" opacity="0" 
+                    animation="property: opacity; to: 0; dur: 3000; easing: easeInOutBack; loop:4; dir:alternate;"
+>>>>>>> d395074366ffeec2ee6521148a632d997a3b1bc8
                     ></a-text>
                 </a-entity>
         
