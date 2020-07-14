@@ -33,7 +33,7 @@ require_once("config.php");
             </div>
 
             <a-scene loading-screen="dotsColor: blue ; backgroundColor: black; enabled: false;"
-                     background="color: #FAFAFA" cursor-listener>
+                     background="color: #FAFAFA" cursor-listener timeout="20000">
 
                 <a-camera id="camera" rotation="0 180 0" look-controls animation="property: rotation; from:0 0 0; to:0 180 0; dur: 39000; delay: 2000; easing: easeInOutSine;"> 
                 </a-camera>

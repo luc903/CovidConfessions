@@ -46,12 +46,12 @@ var confession = function () {
                 _loadConfessions(6);
                 
             }
-            if(!start){
-                console.log("Confessions");        
-                var x = document.getElementById("audio_2"); 
-                x.play(); 
-                start = true;
-            }
+//            if(!start){
+//                console.log("Confessions");        
+//                var x = document.getElementById("audio_2"); 
+//                x.play(); 
+//                start = true;
+//            }
         };
     }
     
@@ -126,28 +126,27 @@ var confession = function () {
 
 var mouseOver = function() {
   if(!start){
-            console.log("Confessions");        
-            var x = document.getElementById("audio_2"); 
-            x.play(); 
-             start = true;
-     }
+      console.log("Confessions");        
+      var x = document.getElementById("audio_2"); 
+      x.play(); 
+      start = true;
+  }
 }
    
 //On Load
 $(function () {
     if($("#confessionsPage").length > 0) {
         confession.init();
-        document.getElementsByClass("confession").addEventListener("mouseover", mouseOver);
+        //document.getElementsByClassName('confession').addEventListener("mouseover", mouseOver);
 }
     
     document.addEventListener("click", function () {
          if(!start){
-            console.log("Confessions");        
-            var x = document.getElementById("audio_2"); 
-            x.play(); 
-//            _initAudioLoop();
-             start = true;
-         }
+              console.log("Confessions");        
+              var x = document.getElementById("audio_2"); 
+              x.play(); 
+              start = true;
+          }
     })
 
      
