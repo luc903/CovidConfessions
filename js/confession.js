@@ -5,37 +5,8 @@ var limitReached = false;
 
 var start = false;
 
-//Lopped audio configuration
-//var _initAudioLoop = function() {
-//        var audioCliplocation = "/audio";
-//        var audioClipPrefix = "confession_";
-//        var audioClipExt = "mp3";
-//        var audioClipLength = 27;
-//        var audioClipFiles = [];
-//        var audioClipIndex = 1
-//        var audioClipIntervalTime = 20; //In seconds
-//        
-//        for(var i = 1; i <= audioClipLength; i++) {
-//            audioClipFiles.push(audioCliplocation + "/" + audioClipPrefix + i + "." + audioClipExt);
-//        }
-//        
-//        //Play Initial Audio Clip
-//        var audioPlayer = new Audio(audioClipFiles[audioClipIndex + 1]);
-//        audioPlayer.play();
-//        audioClipIndex++;
-//        
-//        window.setInterval(function() {
-//            audioPlayer = new Audio(audioClipFiles[(audioClipIndex % audioClipLength) + 1]);
-//            audioPlayer.play();
-//            audioClipIndex++;
-//            //audioClipIndex = Math.floor(Math.random() * audioClipLength);
-//            //console.log(audioClipIndex);
-//        }, audioClipIntervalTime * 1000);
-//}
-
 var confession = function () {
     //Initiate Confessions Page
-    
     var init = function () {
         confessions = _getConfessions();
         _loadConfessions(9);
@@ -43,15 +14,8 @@ var confession = function () {
         //Scroll event
         window.onscroll = function (ev) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                _loadConfessions(6);
-                
+                _loadConfessions(6);  
             }
-//            if(!start){
-//                console.log("Confessions");        
-//                var x = document.getElementById("audio_2"); 
-//                x.play(); 
-//                start = true;
-//            }
         };
     }
     
@@ -139,7 +103,21 @@ $(function () {
         confession.init();
         //document.getElementsByClassName('confession').addEventListener("mouseover", mouseOver);
 }
+    $("#begin").on("click", function() {
+     
+        $("#info").fadeOut(1000);
+
+        if(!start){
+            console.log("Confessions");        
+            var x = document.getElementById("audio_2"); 
+            x.play(); 
+            start = true;
+        }
+       
+        document.getElementById('instructions__watch').setAttribute('animation', 'to: 1');
+
     
+    })
     document.addEventListener("click", function () {
          if(!start){
               console.log("Confessions");        

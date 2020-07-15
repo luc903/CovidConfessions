@@ -24,9 +24,18 @@ include("includes/header.php");
     </a>
 </div>
 <div class="confessionsPage" id="confessionsPage">
+    <div id="splash">
+        <div id="instructions">
+            <div class="instructions__wrapper">
+                <p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p>
+                <button id="begin" type="button" class="uk-button uk-button-default" >Click Here to Begin</button>
+            </div>
+        </div>
+    </div>
     <div class="confessions-page__wrapper">
         <h1>Confessions Gallery</h1>
         <div class="confessions-page__confession-wrapper">
+
 
         </div>
     </div>
