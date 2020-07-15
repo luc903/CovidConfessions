@@ -15,10 +15,6 @@ include("includes/header.php");
     <div class="confesions-wrapper">
         <div class="instructions__wrapper">
             <ul>
-                <li><p><strong>Click to begin</strong> – sit back and watch!</p></li>
-                <li><p>You can use your mouse to explore – it’s 360</p></li>
-                <li><p><strong>Enter your confession</strong> in the Confession Box to continue, it will be added to the gallery</p></li>
-                <li><p>Or click <strong>I’ll come back</strong> to journey straight to The Confession Gallery</p></li>
                 <li><p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p></li>            
             </ul>
 
