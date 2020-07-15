@@ -140,12 +140,16 @@ $(function () {
         //document.getElementsByClassName('confession').addEventListener("mouseover", mouseOver);
 }
     
-    document.addEventListener("click", function () {
-         if(!start){
-              console.log("Confessions");        
+    document.querySelector("#begin")
+    .addEventListener("click", function () {
+         if(!start){       
               var x = document.getElementById("audio_2"); 
               x.play(); 
               start = true;
+              document.querySelector("#confessions-splash")
+              .addEventListener("click", function() {
+                  $(this).fadeOut();
+              })
           }
     })
 

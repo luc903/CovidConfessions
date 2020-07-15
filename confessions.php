@@ -11,6 +11,22 @@ include("includes/header.php");
 
 <audio id="audio_2" loop src="../audio/background.mp3"></audio>
 
+<div id="confessions-splash">
+    <div class="confesions-wrapper">
+        <div class="instructions__wrapper">
+            <ul>
+                <li><p><strong>Click to begin</strong> – sit back and watch!</p></li>
+                <li><p>You can use your mouse to explore – it’s 360</p></li>
+                <li><p><strong>Enter your confession</strong> in the Confession Box to continue, it will be added to the gallery</p></li>
+                <li><p>Or click <strong>I’ll come back</strong> to journey straight to The Confession Gallery</p></li>
+                <li><p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p></li>            
+            </ul>
+
+            <button id="begin" type="button" class="uk-button uk-button-default" >Click Here to Begin</button>
+        </div>
+    </div>
+</div>
+
 <div class="confessions-page__back-btn">
     <a href="/">
      <span uk-icon="icon: arrow-left; ratio: 2"></span>

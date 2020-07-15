@@ -196,6 +196,21 @@ body, html {
   letter-spacing: 0.0425em;
 }
 
+#confessions-splash {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.confesions-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
 .confessionsPage {
   display: flex;
   align-items: center;
