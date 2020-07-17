@@ -26,6 +26,7 @@ require_once("config.php");
                         </ul>
 
                         <button id="begin" type="button" class="uk-button uk-button-default" >Click Here to Begin</button>
+                        
                     </div>
                 </div>
                 

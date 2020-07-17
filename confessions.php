@@ -14,11 +14,8 @@ include("includes/header.php");
 <div id="confessions-splash">
     <div class="confesions-wrapper">
         <div class="instructions__wrapper">
-            <ul>
-                <li><p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p></li>            
-            </ul>
-
-            <button id="begin" type="button" class="uk-button uk-button-default" >Click Here to Begin</button>
+            <p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p>
+            <button id="begin" type="button" class="uk-button uk-button-default" >Click Here to Enter</button>
         </div>
     </div>
 </div>

@@ -6,7 +6,7 @@ body, html {
 
 #confessions-splash {
   position: fixed;
-  background: rgba($color: #000000, $alpha: .3);
+  background: rgba($color: #000000, $alpha: .6);
   height: 100%;
   width: 100%;
   z-index: 1;
@@ -31,6 +31,17 @@ body, html {
     
   
 }
+.uk-button-default:hover {
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.7)!important;
+    transition: background-color 500ms;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(214, 48, 233, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(214, 48, 233, 1);
+    box-shadow: 0px 0px 15px 0px rgba(214, 48, 233, 1);
+    border: 1px solid rgba(214, 48, 233, 1);
+}
+
+  
 
 .confessions-page__back-btn {
   position: fixed;
