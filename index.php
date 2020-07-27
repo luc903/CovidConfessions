@@ -24,9 +24,11 @@ require_once("config.php");
                             <li><p>Or click <strong>I’ll come back</strong> to journey straight to The Confession Gallery</p></li>
                             <li><p>Inside The Confession Gallery click your mouse over the neon boxes to read other confessions!</p></li>            
                         </ul>
-
-                        <button id="begin" type="button" class="uk-button uk-button-default" >Click Here to Begin</button>
                         
+                        <div class="instructions__buttons">
+                            <button id="begin" type="button" class="uk-button uk-button-default" >Click Here to Begin</button>
+                            <button id="gallery" onclick="location.href='https://confessions.audacious.org.uk/confessions';" type="button" class="uk-button uk-button-default" >Skip To Gallery</button>
+                        </div>
                     </div>
                 </div>
                 

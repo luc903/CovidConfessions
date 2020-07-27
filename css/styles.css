@@ -57,6 +57,8 @@ body {
   justify-content: center;
   flex-direction: column;
   justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 90%;
 }
 
 #splash h2 {
@@ -64,7 +66,13 @@ body {
 }
 
 #begin {
-  max-width: 50%;
+  max-width: 49%;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  color: white;
+}
+
+#gallery {
+  max-width: 49%;
   background-color: rgba(0, 0, 0, 0.7) !important;
   color: white;
 }

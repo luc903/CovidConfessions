@@ -46,6 +46,7 @@ body {
 #instructions {
 
     display: none;  
+    
 }
 .instructions__wrapper{
     font-family: 'Poppins', sans-serif;
@@ -55,13 +56,21 @@ body {
     justify-content: center;
     flex-direction: column;
     justify-content: space-around;
+    flex-wrap: wrap;
+    //max-width: 60%;
+    max-width: 90%;
 }
 #splash h2{
 //    display: none;
     text-align: center;
 }
 #begin {
-    max-width: 50%;
+    max-width: 49%;
+    background-color: rgba(0, 0, 0, 0.7)!important;
+    color:white;
+}
+#gallery {
+    max-width: 49%;
     background-color: rgba(0, 0, 0, 0.7)!important;
     color:white;
 }
