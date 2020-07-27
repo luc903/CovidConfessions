@@ -41,6 +41,11 @@ $(function () {
         $("#skip").on("click", function() {
             proceedToConfessions();
             document.getElementById('instructions__wait').setAttribute('value', 'Enjoy The Confessions Gallery');
+            
+            document.getElementById('instructions__text').setAttribute('value', 'The experience will continue');
+            document.getElementById('instructions__mouse').setAttribute('value', 'Please Wait...');
+            
+            
         })
         
         $("#begin").on("click", function() {
@@ -57,6 +62,9 @@ $(function () {
                 cam1.setAttribute('animation', 'to: 0 360 0');
                 
                 document.getElementById('instructions__watch').setAttribute('animation', 'to: 1');
+                 
+                document.getElementById('instructions__text').setAttribute('value', 'The experience will continue');
+                document.getElementById('instructions__mouse').setAttribute('value', 'Please Wait...');
            
                 isLoaded = true;
             }
