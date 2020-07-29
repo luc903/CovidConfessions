@@ -63,20 +63,21 @@ $(function () {
                 
                 document.getElementById('instructions__watch').setAttribute('animation', 'to: 1');
                  
-                document.getElementById('instructions__text').setAttribute('value', 'The experience will continue');
-                document.getElementById('instructions__mouse').setAttribute('value', 'Please Wait...');
-           
+//                document.getElementById('instructions__text').setAttribute('value', 'The experience will continue');
+//                document.getElementById('instructions__mouse').setAttribute('value', 'Please Wait...');
+//           
                 isLoaded = true;
                  
-                             window.setTimeout(function () {
-                                    
-                document.getElementById('vis').style.visibility = 'visible';
-                
-                document.getElementById('instructions').setAttribute('visible', 'true');
-                document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
-                document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
-                
-                placeholder();
+                window.setTimeout(function () {
+
+                    document.getElementById('vis').style.visibility = 'visible';
+
+                    document.getElementById('instructions').setAttribute('visible', 'true');
+                    document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
+                    document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
+
+                    placeholder();
+                    console.log("Pop Up");
                    
                 }, 38000);
 
@@ -163,8 +164,6 @@ $(function () {
                 }
                 
                 if (looping==false){
-                    console.log("Wahoo");
-        
                     document.querySelectorAll(".confession-item") 
                     .forEach(function (el) {      
                     //el.setAttribute('visible', 'false');
