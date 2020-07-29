@@ -3,7 +3,7 @@ $(function () {
         //$("#splash").fadeOut();
         $(".loading").fadeOut();
         $("#instructions").fadeIn("slow");
-    }, 5000);
+    }, 2000);
 
     var looping = true;
     //Confession Form Page
@@ -67,6 +67,19 @@ $(function () {
                 document.getElementById('instructions__mouse').setAttribute('value', 'Please Wait...');
            
                 isLoaded = true;
+                 
+                             window.setTimeout(function () {
+                                    
+                document.getElementById('vis').style.visibility = 'visible';
+                
+                document.getElementById('instructions').setAttribute('visible', 'true');
+                document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
+                document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
+                
+                placeholder();
+                   
+                }, 38000);
+
             }
         })
 
@@ -110,15 +123,15 @@ $(function () {
         var pausing_function = function () {
             var video = document.getElementById("video");
             if (video.currentTime >= 38) {
-                
-                document.getElementById('vis').style.visibility = 'visible';
-                
-                document.getElementById('instructions').setAttribute('visible', 'true');
-                document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
-                document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
-                
-                placeholder();
-
+//                
+//                document.getElementById('vis').style.visibility = 'visible';
+//                
+//                document.getElementById('instructions').setAttribute('visible', 'true');
+//                document.getElementById('instructions__text').setAttribute('animation', 'to: 1');
+//                document.getElementById('instructions__mouse').setAttribute('animation', 'to: 1');
+//                
+//                placeholder();
+//
                 this.removeEventListener("timeupdate", pausing_function);
             }
               

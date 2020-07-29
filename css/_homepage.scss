@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
-//  font-family: 'Bebas Neue', cursive;
+//  font-family: 'Bebas Neue', sans-serif;
 //  letter-spacing: 0.0425em;
 }
 /*  splash screen*/
@@ -58,7 +58,13 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     //max-width: 60%;
-    max-width: 90%;
+    //max-width: 90%;
+}
+.instructions__buttons{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+    width: 100%;
 }
 #splash h2{
 //    display: none;
@@ -198,7 +204,7 @@ body {
   #instruction {
 //    margin-top: 6em;
     color:#fff;
-    }
+}
 
   textarea {
     display: block;
